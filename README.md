@@ -1,4 +1,4 @@
-# backgammon
+# hexxenspiel
 
 #Programmieren II / Software Engineering Projekt
 
