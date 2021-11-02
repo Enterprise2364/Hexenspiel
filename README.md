@@ -5,7 +5,7 @@
 
 *Mitglieder: Antoine Blot, Brice Le Rousseau, Edward Haynes, Johannes Steinhausen, Joanna Senn, Nicolas Martin*
 
------
+---
 
 # Inhaltsverzeichnis
 
@@ -16,7 +16,7 @@
 5. Bedienungsanleitung
 6. User Stories
 7. Releaseplan
-
+---
 
 # Einleitung
 Das folgende Git- Repository ist im Rahmen einer Gruppenarbeit in den Kursen Software Engineering und Programmieren II (Java) entstanden. Die Aufgabenstellung formuliert das Erstellen eines Java Programms
