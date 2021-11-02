@@ -20,3 +20,8 @@
 
 # Einleitung
 Das folgende Git- Repository ist im Rahmen einer Gruppenarbeit in den Kursen Software Engineering und Programmieren II (Java) entstanden. Die Aufgabenstellung formuliert das Erstellen eines Java Programms
+
+
+| US | SP | Priorität | Akzeptanzkriterium |
+|----|----|-----------|--------------------|
+|Als Benutzer kontrolliere ich die Bewegungen hoch- und abendwerts||||
