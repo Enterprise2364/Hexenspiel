@@ -1,4 +1,4 @@
-# hexxenspiel
+# hexenspiel
 
 #Programmieren II / Software Engineering Projekt
 
