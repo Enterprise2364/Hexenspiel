@@ -24,6 +24,6 @@ Das folgende Git- Repository ist im Rahmen einer Gruppenarbeit in den Kursen Sof
 
 | US | SP | Priorität | Akzeptanzkriterium |
 |----|----|----|----|
-|1. Als Benutzer kontrolliere ich die Bewegungen hoch- und abendwerts||||
+|1. Als Benutzer kontrolliere ich die Bewegungen des Hexencharakters hoch- und abendwerts||||
 |2. Als Benutzer, mochte ich auf den Bildschirm das Spiel sehen||||
 |3. Als Benutzer, erwarte ich dass die Hürden für meine Figur auf verschiedenen Höhen ankommen. ||||
