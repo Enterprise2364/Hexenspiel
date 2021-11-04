@@ -47,7 +47,7 @@ Die Bedienung des Spiels soll einfach sein und Spass machen. Die Umgebung soll s
 | 2 | Als Benutzer erwarte ich, dass die Hürden für meine Figur auf verschiedenen Höhen anfliegen | Mithilfe einer Zufallsfunktion erscheinen die Gegenstände auf verschiedenen Höhen | hoch | 5 |
 | 3 | Als Benutzer möchte ich ein Hauptmenü haben, damit ich das Spiel starten kann | Ein Hauptmenü mit Start und Exitknopf soll dem Spieler bereitstehen | hoch | 10 |
 | 4 | Als Benutzer möchte ich angezeigt bekommen, sobald ich gewonnen habe | Falls der Spieler gewinnt, soll sich ein neues Fenster öffnen | mittel | 10 |
-| 5 | Als Benutzer wünsche ich mir verschiedene Schwierigkeitsstufen | Zu Beginn kann der Schwierigkeitsgrad ausgewählt werden. Auf höheren Stufen erscheinen mehr Objekte | mittel | 15 |
+| 5 | Als Benutzer wünsche ich mir verschiedene Schwierigkeitsstufen | Zu Beginn kann der Schwierigkeitsgrad ausgewählt werden. Auf höheren Stufen erscheinen mehr Objekte | mittel | 10 |
 | 6 | Als Benutzer möchte ich gewinnen können | Es soll ein funktionierendes Spiel programmiert werden, welches nicht unmöglich zu spielen ist | hoch | 10 |
 | 7 | Als Programmierer möchte ich das Programm einfach nachvollziehen können, um es nachzubauen, warten und neue Features einfügen zu können | Kommentare, Logische Struktur | hoch | 5 |
 
