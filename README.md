@@ -1,9 +1,8 @@
-## trinat-franklin
 # Witch Smash
 
 *Group members: Antoine Blot, Brice Le Rousseau, Edward Haynes, Johannes Steinhausen, Joanna Senn, Nicolas Martin*
 
-### A project for: Programming II / Software Engineering
+### A project for: Programming II / Software Engineering (Autumn 2021)
 
 
 ---
