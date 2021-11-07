@@ -19,8 +19,8 @@
 <li>User Stories</li>
 <li>Release plan</li>
 </ol>
----
 
+---
 # Introduction
 The following Git Repository is the product of a groupwork project for the course Software Engineering and Programming II (Java). We were tasked with conceiving, developing and programming a programme in java. We decided to produce a *Hexenspiel* game. The aim of the game is to avoid pumpkins which fly towards your character.
 
