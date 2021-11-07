@@ -13,11 +13,11 @@
 <ol>
 <li>Introduction </li>
 <li>Aims</li>
-3. Constraints
-4. Introduction to the build
-5. Kurze Bedienungsanleitung
-6. User Stories
-7. Release plan
+<li>Constraints</li>
+<li>Introduction to the build</li>
+<li>Kurze Bedienungsanleitung</li>
+<li>User Stories</li>
+<li>Release plan</li>
 
 ---
 
