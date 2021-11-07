@@ -1,6 +1,8 @@
 ## trinat-franklin
 # Witch Smash
 
+![Witch Smash Hat](https://creativemarket.com/Saggitarius/941214-Witch-hat-flat-icon)
+
 ### Programming II / Software Engineering Projekt
 
 *Group members: Antoine Blot, Brice Le Rousseau, Edward Haynes, Johannes Steinhausen, Joanna Senn, Nicolas Martin*
