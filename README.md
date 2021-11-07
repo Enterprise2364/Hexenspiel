@@ -1,28 +1,31 @@
 ## trinat-franklin
 # Hexenspiel
 
-### Programmieren II / Software Engineering Projekt
+### Programming II / Software Engineering Projekt
 
-*Mitglieder: Antoine Blot, Brice Le Rousseau, Edward Haynes, Johannes Steinhausen, Joanna Senn, Nicolas Martin*
+*Member: Antoine Blot, Brice Le Rousseau, Edward Haynes, Johannes Steinhausen, Joanna Senn, Nicolas Martin*
 
 ---
 
-# Inhaltsverzeichnis
+# Table of contents
 
-1. Einleitung 
-2. Ziele
-3. Randbedingungen
-4. Build-Anleitung
+1. Introduction 
+2. Aims
+3. Constraints
+4. Introduction to the build
 5. Kurze Bedienungsanleitung
 6. User Stories
-7. Releaseplan
+7. Release plan
 
 ---
 
-# Einleitung
-Das folgende Git- Repository ist im Rahmen einer Gruppenarbeit in den Kursen Software Engineering und Programmieren II (Java) entstanden. Die Aufgabe bestand darin, ein Programm in Java zu entwickeln und programmieren. Wir haben uns für ein eigenes Spiel names *Hexenspiel* entschieden. Das Ziel des Spieles ist es, heranfliegenden Kürbisen auszuweichsen. Der Spieler benutzt dabei die Tastatur. Wir der Spieler von drei Kürbisen getroffen, ist das Spiel vorbei. Die Umsetzung erfolgte dabei mit Java bzw. Java FX.
+# Introduction
+The following Git Repository is the product of a groupwork project for the course Software Engineering and Programming II (Java). We were tasked with conceiving, developing and programming a programme in java. We decided to produce a *Hexenspiel* game. The aim of the game is to avoid pumpkins which fly towards your character.
 
-# Ziele
+
+..im Rahmen einer Gruppenarbeit in den Kursen Software Engineering und Programmieren II (Java) entstanden. Die Aufgabe bestand darin, ein Programm in Java zu entwickeln und programmieren. Wir haben uns für ein eigenes Spiel names *Hexenspiel* entschieden. Das Ziel des Spieles ist es, heranfliegenden Kürbisen auszuweichsen. Der Spieler benutzt dabei die Tastatur. Wir der Spieler von drei Kürbisen getroffen, ist das Spiel vorbei. Die Umsetzung erfolgte dabei mit Java bzw. Java FX.
+
+# Aims
 Das Ziel des Projekts war, die in den Fächern Software Engineering sowie Programmieren II erlernten Kompetenzen umzusetzen. Wir wollten ein einfaches Spiel entwickeln, was Spass macht und passend zu Halloween ist, da wir alle grosse Fans davon sind. 
 
 # Randbedingungen
