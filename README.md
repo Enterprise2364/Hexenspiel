@@ -1,9 +1,9 @@
 ## trinat-franklin
-# Hexenspiel
+# Witch Smash
 
 ### Programming II / Software Engineering Projekt
 
-*Member: Antoine Blot, Brice Le Rousseau, Edward Haynes, Johannes Steinhausen, Joanna Senn, Nicolas Martin*
+*Group members: Antoine Blot, Brice Le Rousseau, Edward Haynes, Johannes Steinhausen, Joanna Senn, Nicolas Martin*
 
 ---
 
