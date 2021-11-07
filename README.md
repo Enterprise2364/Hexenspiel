@@ -1,7 +1,6 @@
 ## trinat-franklin
 # Witch Smash
 
-![Witch Smash Hat](https://creativemarket.com/Saggitarius/941214-Witch-hat-flat-icon)
 
 ### Programming II / Software Engineering Projekt
 
@@ -11,7 +10,8 @@
 
 # Table of contents
 
-1. Introduction 
+<ol>
+<li>Introduction </li>
 2. Aims
 3. Constraints
 4. Introduction to the build
