@@ -25,9 +25,9 @@
 The following Git Repository is the product of a groupwork project for the course Software Engineering and Programming II (Java). We were tasked with conceiving, developing and programming a programme in java. We decided to produce a *Witch Smash* game. The aim of the game is to avoid pumpkins which fly towards the witch character, which (!) is controlled by the player. The player uses the keyboard to move the witch. If the witch collides with three pumpkins, the game is over. We implementated the game using java and java FX.
 
 # Aims
-Das Ziel des Projekts war, die in den Fächern Software Engineering sowie Programmieren II erlernten Kompetenzen umzusetzen. Wir wollten ein einfaches Spiel entwickeln, was Spass macht und passend zu Halloween ist, da wir alle grosse Fans davon sind. 
+The aim of the project was to apply what we have learned in our software engineering and programming II classes. We wanted to develop a simple game, which would be fun to play. We were inspired by the season of Halloween, during which we began this project.
 
-# Randbedingungen
+# Constraints
 
 Die Bedienung des Spiels soll einfach sein und Spass machen. Die Umgebung soll schön gestaltet sein. Alle Mitglieder sollen gleich viel Aufwand in die Arbeit investieren. 
 
