@@ -1,10 +1,10 @@
 ## trinat-franklin
 # Witch Smash
 
-
-### Programming II / Software Engineering Projekt
-
 *Group members: Antoine Blot, Brice Le Rousseau, Edward Haynes, Johannes Steinhausen, Joanna Senn, Nicolas Martin*
+
+### A project for: Programming II / Software Engineering
+
 
 ---
 
