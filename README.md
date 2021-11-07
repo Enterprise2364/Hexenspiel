@@ -18,7 +18,7 @@
 <li>Kurze Bedienungsanleitung</li>
 <li>User Stories</li>
 <li>Release plan</li>
-
+</ol>
 ---
 
 # Introduction
