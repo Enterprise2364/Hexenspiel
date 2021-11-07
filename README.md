@@ -22,10 +22,7 @@
 
 ---
 # Introduction
-The following Git Repository is the product of a groupwork project for the course Software Engineering and Programming II (Java). We were tasked with conceiving, developing and programming a programme in java. We decided to produce a *Witch Smash* game. The aim of the game is to avoid pumpkins which fly towards the witch character, which (!) is controlled by the player.
-
-
-..im Rahmen einer Gruppenarbeit in den Kursen Software Engineering und Programmieren II (Java) entstanden. Die Aufgabe bestand darin, ein Programm in Java zu entwickeln und programmieren. Wir haben uns für ein eigenes Spiel names *Hexenspiel* entschieden. Das Ziel des Spieles ist es, heranfliegenden Kürbisen auszuweichsen. Der Spieler benutzt dabei die Tastatur. Wir der Spieler von drei Kürbisen getroffen, ist das Spiel vorbei. Die Umsetzung erfolgte dabei mit Java bzw. Java FX.
+The following Git Repository is the product of a groupwork project for the course Software Engineering and Programming II (Java). We were tasked with conceiving, developing and programming a programme in java. We decided to produce a *Witch Smash* game. The aim of the game is to avoid pumpkins which fly towards the witch character, which (!) is controlled by the player. The player uses the keyboard to move the witch. If the witch collides with three pumpkins, the game is over. We implementated the game using java and java FX.
 
 # Aims
 Das Ziel des Projekts war, die in den Fächern Software Engineering sowie Programmieren II erlernten Kompetenzen umzusetzen. Wir wollten ein einfaches Spiel entwickeln, was Spass macht und passend zu Halloween ist, da wir alle grosse Fans davon sind. 
