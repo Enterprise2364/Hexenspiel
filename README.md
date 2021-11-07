@@ -12,7 +12,7 @@
 
 <ol>
 <li>Introduction </li>
-2. Aims
+<li>Aims</li>
 3. Constraints
 4. Introduction to the build
 5. Kurze Bedienungsanleitung
