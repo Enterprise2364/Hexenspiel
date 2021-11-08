@@ -1,9 +1,8 @@
-# Witch Smash
+# Witch Dash
 
 *Group members: Antoine Blot, Brice Le Rousseau, Edward Haynes, Johannes Steinhausen, Joanna Senn, Nicolas Martin*
 
-### A project for: Programming II / Software Engineering (Autumn 2021)
-Class: <trinat.franklin@gmail.com>
+### A project for: Programming II / Software Engineering (Franklin - Autumn 2021)
 
 
 ---
@@ -13,28 +12,30 @@ Class: <trinat.franklin@gmail.com>
 <ol>
 <li>Introduction </li>
 <li>Aims</li>
-<li>Constraints</li>
-<li>Introduction to the build</li>
-<li>Kurze Bedienungsanleitung</li>
+<li>Context</li>
+<li>Installation instructions</li>
+<li>Player controls/li>
 <li>User Stories</li>
 <li>Release plan</li>
 </ol>
 
 ---
 # Introduction
-The following Git Repository is the product of a groupwork project for the course Software Engineering and Programming II (Java). We were tasked with conceiving, developing and programming a programme in java. We decided to produce a *Witch Smash* game. The aim of the game is to avoid pumpkins which fly towards the witch character, which (!) is controlled by the player. The player uses the keyboard to move the witch. If the witch collides with three pumpkins, the game is over. We implementated the game using java and java FX.
+This Git Repository corresponds to a groupwork project for the course Software Engineering and Programming II (Java). We were tasked with conceiving, developing and programming a programme in java.
+
+Starting on the project just before Halloween, we decided to produce a game, which we called *Witch Dash*. The aim of the game is to avoid pumpkins which fly towards the witch character, controlled by the player using the keyboard. If the witch collides with three pumpkins, the game is over. We implementated the game using java and java FX.
 
 # Aims
-The aim of the project was to apply what we have learned in our software engineering and programming II classes. We wanted to develop a simple game, which would be fun to play. We were inspired by the season of Halloween, during which we began this project.
+The aim of the project was to apply what we have learned in our software engineering and programming II classes, using java, java FX, Git, and Jira. We wanted the end product to be a simple game, which would be fun to play.
 
-# Constraints
+# Context
 
-Die Bedienung des Spiels soll einfach sein und Spass machen. Die Umgebung soll schön gestaltet sein. Alle Mitglieder sollen gleich viel Aufwand in die Arbeit investieren. 
+We had three weeks for the project. Playing the game should be easy and fun, and it should have an attractive design. All team members should work equally on the project. 
 
 
-# Build-Anleitung
-  1. Laden Sie die Datei von unserem Repository in Github runter
-  2. Entpacken Sie die diese heruntergeladene Datei in den gewünschten Ordner
+# Installation instructions
+  1. Download all files from this github repository.
+  2. Unzip and save the files to a folder of your choice.
   3. Kopieren Sie den Pfad der gewünschten Versionsdatei (.jar) in die Zwischenablage
   4. Öffnen Sie die Konsole Ihres Rechners
   5. Geben Sie dort java -jar gefolgt von dem kopierten Pfad (.jar) ein.
