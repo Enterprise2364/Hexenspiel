@@ -14,7 +14,7 @@
 <li>Aims</li>
 <li>Context</li>
 <li>Installation instructions</li>
-<li>Player controls/li>
+<li>Player controls</li>
 <li>User Stories</li>
 <li>Release plan</li>
 </ol>
@@ -36,11 +36,13 @@ We had three weeks for the project. Playing the game should be easy and fun, and
 # Installation instructions
   1. Download all files from this github repository.
   2. Unzip and save the files to a folder of your choice.
-  3. Kopieren Sie den Pfad der gewünschten Versionsdatei (.jar) in die Zwischenablage
-  4. Öffnen Sie die Konsole Ihres Rechners
-  5. Geben Sie dort java -jar gefolgt von dem kopierten Pfad (.jar) ein.
+  3. Copy the path of the desired version file (.jar) to the clipboard.
+  4. Open your computer's console or terminal
+  5. There, enter java -jar followed by the copied path (.jar).
 
-# Kurze Bedienungsanleitung
+# Player controls
+
+Once the game has started, you can move your witch character up and down using the W and S keys on your keyboard. Pumpkins will come from the right, move to stay out of their way. If you loose all of your lives, you'll have to start again.
 
 # User Stories
 
