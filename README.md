@@ -46,24 +46,24 @@ Once the game has started, you can move your witch character up and down using t
 
 # User Stories
 
-| US | Beschreibung | Akzeptanzkriterium | Priorität | Story Points|
+| US | Description | Acceptance criteria | Priority | Story Points |
 |----|----|----|----|----|
-| 1 | Als Benutzer kontrolliere ich die Auf- und Abwärtsbewegungen des Hexencharakters mit meiner Tastatur | Das Progamm soll die Eingabe der Tastatur erkennen und die Figur entsprechend bewegen | hoch | 5 |
-| 2 | Als Benutzer erwarte ich, dass die Hürden für meine Figur auf verschiedenen Höhen anfliegen | Mithilfe einer Zufallsfunktion erscheinen die Gegenstände auf verschiedenen Höhen | hoch | 5 |
-| 3 | Als Benutzer möchte ich ein Hauptmenü haben, damit ich das Spiel starten kann | Ein Hauptmenü mit Start und Exitknopf soll dem Spieler bereitstehen | hoch | 10 |
-| 4 | Als Benutzer möchte ich angezeigt bekommen, sobald ich gewonnen habe | Falls der Spieler gewinnt, soll sich ein neues Fenster öffnen | mittel | 10 |
-| 5 | Als Benutzer wünsche ich mir verschiedene Schwierigkeitsstufen | Zu Beginn kann der Schwierigkeitsgrad ausgewählt werden. Auf höheren Stufen erscheinen mehr Objekte | mittel | 10 |
-| 6 | Als Benutzer möchte ich gewinnen können | Es soll ein funktionierendes Spiel programmiert werden, welches nicht unmöglich zu spielen ist | hoch | 10 |
-| 7 | Als Programmierer möchte ich das Programm einfach nachvollziehen können, um es nachzubauen, warten und neue Features einfügen zu können | Kommentare, Logische Struktur | hoch | 5 |
+| 1 | As a user I control the upwards and downwards movement of the witch character with the keyboard. | The program should recognise keyboard inputs and move the character accordingly. | high | 5 |
+| 2 | As a user, I expect that the obstacles fly towards the witch character at alternating heights. | With the help of a random function, the objects appear at different heights. | high | 5 |
+| 3 | As a user, I would like to have a main menu so that I can start the game. | A main menu with start and exit button shall be available to the player. | high | 10 |
+| 4 | As a user, I would like to be shown as soon as I have won the game. | If the player wins, a new window shall open. | medium | 10 |
+| 5 | As a user, I would like to be able to choose between different levels of game difficulty. | The level of difficulty can be selected in the main menu before beginning a game. More objects appear at higher levels. | medium | 10 |
+| 6 | As a user I would like to be able to win. | A functioning game should be programmed that is not impossible to play. | high | 10 |
+| 7 | As a programmer, I want to be able to easily understand the programme so that I can rebuild it, maintain it and add new features. | Comments, logical structure. | high | 5 |
 
 # Releaseplan
 
 | US | Release 1 | Release 2 | Release 3 |
 |----|----|----|----|
-|1| Grundanforderung | | |
-|2| Grundanforderung | | |
+|1| Basic requirements | | |
+|2| Basic requirements | | |
 |3| | Release 1 | |
 |4| | Release 1 | |
 |5| | | Release 2 |
-|6|  Grundanforderung | | |
-|7|  Grundanforderung | | |
+|6|  Basic requirements | | |
+|7|  Basic requirements | | |
