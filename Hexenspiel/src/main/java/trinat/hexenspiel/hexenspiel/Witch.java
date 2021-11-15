@@ -1,18 +1,15 @@
 package trinat.hexenspiel.hexenspiel;
 
-import javafx.application.Application;
-import javafx.scene.*;
-import javafx.stage.Stage;
 import javafx.scene.paint.*;
 import javafx.scene.shape.*;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import javafx.scene.image.*;
 import javafx.scene.transform.Translate;
-import java.util.Scanner;
+import java.io.InputStream;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
+
 
 public class Witch {
-    public static Rectangle hit_box (int positionX,int positionY,int Width,int Height,int ArcWidth,int ArcHeight){
+    public static Rectangle Hit_box_witch (int positionX,int positionY,int Width,int Height,int ArcWidth,int ArcHeight){
         //creating a shape
         Rectangle r = new Rectangle();
         r.setX(positionX);
@@ -22,10 +19,21 @@ public class Witch {
         r.setArcWidth(ArcWidth);
         r.setArcHeight(ArcHeight);
         r.setFill(Color.BLUE);
+        //returning the shape
         return r;
     }
 
-    public static void Rectangle_Translation(Rectangle rInterior,int positioninitialX, int positioninitialY,int changementX,int changementY){
+    /*public static Image Witch_image (Stage primaryStage){
+        //calling an image
+        InputStream iconStream = Witch.class.getResourceAsStream("src/main/resources/trinat/hexenspiel/hexenspiel/witch.png");
+        Image witch = new Image(iconStream);
+        //adding tne image to the stage
+        primaryStage.getIcons().add(witch);
+        //returning the image
+        return witch;
+    }*/
+
+    public static Translate Rectangle_Translation(Rectangle rInterior,int positioninitialX, int positioninitialY,int changementX,int changementY){
         //Creating the translation transformation
         Translate translate = new Translate();
 
@@ -35,6 +43,8 @@ public class Witch {
         translate.setZ(0);
         //Adding transformation to hit_box
         rInterior.getTransforms().addAll(translate);
+        //returning the transformation
+        return translate;
 
     }
 }
