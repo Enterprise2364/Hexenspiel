@@ -47,13 +47,13 @@ public class Main_class extends Application {
                 }
                 else if (e.getCode().equals(KeyCode.S)) {
                     if (r.getY()<= playground.getHeight()-hit_boxHeight){
-                        Witch.Rectangle_Translation(r,0,1*speed);
+                        Witch.Rectangle_Translation(r,0,speed);
                     }
 
                 }
                 else if (e.getCode().equals(KeyCode.D)) {
                     if (r.getX() <=playground.getWidth()-hit_boxWidth){
-                        Witch.Rectangle_Translation(r,1*speed,0);
+                        Witch.Rectangle_Translation(r,speed,0);
                     }
 
                 }
