@@ -33,7 +33,7 @@ public class Witch {
         return witch;
     }*/
 
-    public static Translate Rectangle_Translation(Rectangle rInterior,int positioninitialX, int positioninitialY,int changementX,int changementY){
+    public static Rectangle Rectangle_Translation(Rectangle rInterior,int positioninitialX, int positioninitialY,int changementX,int changementY){
         //Creating the translation transformation
         Translate translate = new Translate();
 
@@ -44,7 +44,7 @@ public class Witch {
         //Adding transformation to hit_box
         rInterior.getTransforms().addAll(translate);
         //returning the transformation
-        return translate;
+        return rInterior;
 
     }
 }

@@ -33,33 +33,35 @@ public class Main_class extends Application {
         int SceneXsize=500;
         int SceneYsize=500;
         Scene playground = new Scene(root,SceneXsize,SceneYsize);
-
-
-        // Witch mouvement configuration
-        playground.setOnKeyPressed(e -> {
-            if (e.equals(KeyCode.W) || e.equals(KeyCode.Z)) {
-                if (positionX>=0){
-                    Witch.Rectangle_Translation(r,positionX,positionY,-1,0);
-                }
-            }
-            else if (e.equals(KeyCode.S)) {
-                if (positionX<=SceneXsize-hit_boxHeight){
-                    Witch.Rectangle_Translation(r,positionX,positionY,1,0);
-                }
-            }
-            else if (e.equals(KeyCode.D)) {
-                if (positionY<=SceneYsize-hit_boxWidth){
-                    Witch.Rectangle_Translation(r,positionX,positionY,0,1);
-                }
-            }
-            else if (e.equals(KeyCode.Q)) {
-                if (positionY>=0){
-                    Witch.Rectangle_Translation(r,positionX,positionY,0,-1);
-                }
-            }
-        });
         stage.setScene(playground);
         stage.show();
+
+        // Witch mouvement configuration
+
+        playground.setOnKeyPressed(e -> {
+                if (e.equals(KeyCode.W) || e.equals(KeyCode.Z)) {
+                    if (positionY>=0){
+                        Witch.Rectangle_Translation(r,positionX,positionY,0,-1);
+                    }
+                }
+                else if (e.equals(KeyCode.S)) {
+                    if (positionY<=SceneYsize-hit_boxHeight){
+                        Witch.Rectangle_Translation(r,positionX,positionY,0,1);
+                    }
+                }
+                else if (e.equals(KeyCode.D)) {
+                    if (positionX<=SceneXsize-hit_boxWidth){
+                        Witch.Rectangle_Translation(r,positionX,positionY,1,0);
+                    }
+                }
+                else if (e.equals(KeyCode.Q) || e.equals(KeyCode.A)) {
+                    if (positionX>=0){
+                        Witch.Rectangle_Translation(r,positionX,positionY,-1,0);
+                    }
+                }
+            });
+
+
     }
 
 
