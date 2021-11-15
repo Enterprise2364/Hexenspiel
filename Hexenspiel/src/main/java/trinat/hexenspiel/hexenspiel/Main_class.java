@@ -36,28 +36,32 @@ public class Main_class extends Application {
         stage.setScene(playground);
         stage.show();
 
-        // Witch mouvement configuration
-
+        // Witch mouvement configuration e.getCode().equals(KeyCode.W
+        int speed=8;
         playground.setOnKeyPressed(e -> {
-                if (e.equals(KeyCode.W) || e.equals(KeyCode.Z)) {
-                    if (positionY>=0){
-                        Witch.Rectangle_Translation(r,positionX,positionY,0,-1);
+                if (e.getCode().equals(KeyCode.W) || e.getCode().equals(KeyCode.Z)) {
+                    if (r.getY() >=0){
+                        Witch.Rectangle_Translation(r,0,-1*speed);
                     }
+
                 }
-                else if (e.equals(KeyCode.S)) {
-                    if (positionY<=SceneYsize-hit_boxHeight){
-                        Witch.Rectangle_Translation(r,positionX,positionY,0,1);
+                else if (e.getCode().equals(KeyCode.S)) {
+                    if (r.getY()<= playground.getHeight()-hit_boxHeight){
+                        Witch.Rectangle_Translation(r,0,1*speed);
                     }
+
                 }
-                else if (e.equals(KeyCode.D)) {
-                    if (positionX<=SceneXsize-hit_boxWidth){
-                        Witch.Rectangle_Translation(r,positionX,positionY,1,0);
+                else if (e.getCode().equals(KeyCode.D)) {
+                    if (r.getX() <=playground.getWidth()-hit_boxWidth){
+                        Witch.Rectangle_Translation(r,1*speed,0);
                     }
+
                 }
-                else if (e.equals(KeyCode.Q) || e.equals(KeyCode.A)) {
-                    if (positionX>=0){
-                        Witch.Rectangle_Translation(r,positionX,positionY,-1,0);
+                else if (e.getCode().equals(KeyCode.Q) || e.getCode().equals(KeyCode.A)) {
+                    if (r.getX() >=0){
+                        Witch.Rectangle_Translation(r,-1*speed,0);
                     }
+
                 }
             });
 
