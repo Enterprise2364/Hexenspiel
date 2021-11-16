@@ -3,8 +3,8 @@ package trinat.hexenspiel.hexenspiel;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-public class Obstacle {
-    public static Rectangle Hit_box_obstacle (int positionX, int positionY, int Width, int Height, int ArcWidth, int ArcHeight){
+public class Pumpkin {
+    public static Rectangle Hit_box_pumpkin(int positionX, int positionY, int Width, int Height, int ArcWidth, int ArcHeight){
         //creating a shape
         Rectangle r = new Rectangle();
         r.setX(positionX);
@@ -29,7 +29,7 @@ public class Obstacle {
     }*/
 
     public static Rectangle Rectangle_Translation(Rectangle rInterior,int changementX){
-        //Setting the X,Y,Z coordinates to apply the translation
+        //Setting the X coordinates to apply the translation
         rInterior.setX(rInterior.getX()+changementX);
         return rInterior;
 

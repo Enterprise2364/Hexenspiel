@@ -6,7 +6,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.scene.Group;
-import javafx.scene.image.Image;
+
 import java.io.IOException;
 
 
@@ -24,7 +24,7 @@ public class Main_class extends Application {
         int hit_boxHeight=25;
 
         //squares definition
-        Rectangle o=Obstacle.Hit_box_obstacle (positionoX,positionoY,hit_boxWidth,hit_boxHeight,2,2);
+        Rectangle o= Pumpkin.Hit_box_pumpkin (positionoX,positionoY,hit_boxWidth,hit_boxHeight,2,2);
         Rectangle w=Witch.Hit_box_witch (positionwX,positionwY,hit_boxWidth,hit_boxHeight,2,2);
 
         //image definition
