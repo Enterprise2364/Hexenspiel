@@ -34,16 +34,9 @@ public class Witch {
     }*/
 
     public static Rectangle Rectangle_Translation(Rectangle rInterior,int changementX,int changementY){
-        //Creating the translation transformation
-        Translate translate = new Translate();
-
         //Setting the X,Y,Z coordinates to apply the translation
-        translate.setX(changementX);
-        translate.setY(changementY);
-        translate.setZ(0);
-        //Adding transformation to hit_box
-        rInterior.getTransforms().addAll(translate);
-        //returning the transformation
+        rInterior.setX(rInterior.getX()+changementX);
+        rInterior.setY(rInterior.getY()+changementY);
         return rInterior;
 
     }
