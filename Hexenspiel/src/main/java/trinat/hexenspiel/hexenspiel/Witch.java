@@ -30,21 +30,9 @@ public class Witch {
 
 
 
-    /*public static Rectangle Hit_box_witch (int positionX,int positionY,int Width,int Height,int ArcWidth,int ArcHeight){
-        //creating a shape
-        Rectangle r = new Rectangle();
-        r.setX(positionX);
-        r.setY(positionY);
-        r.setWidth(Width);
-        r.setHeight(Height);
-        r.setArcWidth(ArcWidth);
-        r.setArcHeight(ArcHeight);
-        r.setFill(Color.BLUE);
-        //returning the shape
-        return r;
-    }
 
-    public static Image Witch_image (Stage primaryStage){
+
+    /*public static Image Witch_image (Stage primaryStage){
         //calling an image
         InputStream iconStream = Witch.class.getResourceAsStream("src/main/resources/trinat/hexenspiel/hexenspiel/witch.png");
         Image witch = new Image(iconStream);
