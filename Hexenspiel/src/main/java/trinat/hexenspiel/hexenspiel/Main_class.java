@@ -123,7 +123,7 @@ public class Main_class extends Application {
 
         for (int i = 0; i <100; i++) {
                 if (o.getX()<=-2*o.getWidth()){
-                    o.setY(Usfull.Random(SceneYsize-o.getHeight(),0));
+                    o.setY(Usefull.Random(SceneYsize-o.getHeight(),0));
                     o.setX(-2*o.getWidth());
                 }
                 else{
