@@ -25,7 +25,7 @@ public class Main_class extends Application {
 
         //squares definition
         Rectangle o= Pumpkin.Hit_box_pumpkin (positionoX,positionoY,hit_boxWidth,hit_boxHeight,2,2);
-        Rectangle w=Witch.Hit_box_witch (positionwX,positionwY,hit_boxWidth,hit_boxHeight,2,2);
+        Rectangle w= Witch.Hit_box_witch (positionwX,positionwY,hit_boxWidth,hit_boxHeight,2,2);
 
         //image definition
         //Image w = Witch.Witch_image(stage);
