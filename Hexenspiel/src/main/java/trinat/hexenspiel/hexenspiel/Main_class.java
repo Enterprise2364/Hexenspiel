@@ -18,7 +18,7 @@ public class Main_class extends Application {
         //définition Squares parameter
         int positionwX=100;
         int positionwY=100;
-        int positionoX=100;
+        int positionoX=250;
         int positionoY=250;
         int hit_boxWidth=25;
         int hit_boxHeight=25;
@@ -120,18 +120,18 @@ public class Main_class extends Application {
             });
 
         //obstacle mouvement configuration
-        /*
-        for (int i = 0; i <1000; i++) {
+
+        for (int i = 0; i <100; i++) {
                 if (o.getX()<=-2*o.getWidth()){
                     o.setY(Usfull.Random(SceneYsize-o.getHeight(),0));
                     o.setX(-2*o.getWidth());
                 }
                 else{
-                    Obstacle.Rectangle_Translation(o,-1*speed);
-                    Usfull.Wait(1000);
+                    Pumpkin.Rectangle_Translation(o,-1*speed);
+                    Usfull.Wait(10);
                 }
             }
-           */
+
 
     }
 
