@@ -1,6 +1,6 @@
 package trinat.hexenspiel.hexenspiel;
 
-public class Usfull {
+public class Usefull {
     public static void Wait(int ms)
     {
         try
@@ -13,7 +13,6 @@ public class Usfull {
         }
     }
     public static double Random(double Max,double Min){
-        double random=Math.random()*(Max-Min);
-        return random;
+        return Min+=Math.random()*(Max-Min);
     }
 }
