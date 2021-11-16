@@ -1,6 +1,6 @@
 package trinat.hexenspiel.hexenspiel;
 
-public class GameEngine {
+public class witchDashEngine {
     //Prepared Class for Sprint 2
 
 }
