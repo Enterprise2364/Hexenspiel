@@ -25,12 +25,11 @@ public class CollisionTestMain extends Application {
         witchDashStage.setScene(scene);
         witchDashStage.show();
         //CollisionTest testVariable = new CollisionTest(rectangle1.getX(),rectangle1.getY(),rectangle1.getWidth(),rectangle1.getHeight(),rectangle2.getX(),rectangle2.getY(),rectangle2.getWidth(),rectangle2.getHeight());
-        //test=CollisionTest.testCollision(rectangle2,rectangle1);
-        //test = testVariable.testCollision(rectangle1,rectangle2);
+        test=CollisionTest.testCollision(rectangle2,rectangle1);
         rectangle2.setX(rectangle1.getX()+10);
         rectangle2.setY(rectangle1.getY()-10);
         //test = testVariable.testCollision(rectangle1,rectangle2);
-        //test=CollisionTest.testCollision(rectangle2,rectangle1);
+        test=CollisionTest.testCollision(rectangle2,rectangle1);
         //test=rectangle1.intersects(rectangle2.getX(),rectangle2.getY(),rectangle2.getWidth(),rectangle2.getHeight());
 
 
