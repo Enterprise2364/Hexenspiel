@@ -6,16 +6,16 @@ import javafx.scene.shape.Rectangle;
 public class Pumpkin {
     public static Rectangle Hit_box_pumpkin(int positionX, int positionY, int Width, int Height, int ArcWidth, int ArcHeight){
         //creating a shape
-        Rectangle r = new Rectangle();
-        r.setX(positionX);
-        r.setY(positionY);
-        r.setWidth(Width);
-        r.setHeight(Height);
-        r.setArcWidth(ArcWidth);
-        r.setArcHeight(ArcHeight);
-        r.setFill(Color.RED);
+        Rectangle pumpkin = new Rectangle();
+        pumpkin.setX(positionX);
+        pumpkin.setY(positionY);
+        pumpkin.setWidth(Width);
+        pumpkin.setHeight(Height);
+        pumpkin.setArcWidth(ArcWidth);
+        pumpkin.setArcHeight(ArcHeight);
+        pumpkin.setFill(Color.RED);
         //returning the shape
-        return r;
+        return pumpkin;
     }
 
     /*public static Image Obstacle_image (Stage primaryStage){
