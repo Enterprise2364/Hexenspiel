@@ -10,9 +10,9 @@ public class Pumpkin {
     public Pumpkin() {
         this.rectangle.setX(10);
         this.rectangle.setY(10);
-        this.rectangle.setHeight(25);
-        this.rectangle.setWidth(25);
-        this.rectangle.setFill(Color.BLUE);
+        this.rectangle.setHeight(20);
+        this.rectangle.setWidth(20);
+        this.rectangle.setFill(Color.ORANGE);
         this.rectangle.setArcWidth(2);
         this.rectangle.setArcHeight(2);
     }
