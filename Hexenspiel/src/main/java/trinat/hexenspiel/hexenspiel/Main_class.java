@@ -128,7 +128,7 @@ public class Main_class extends Application {
                 }
                 else{
                     Pumpkin.Rectangle_Translation(o,-1*speed);
-                    Usfull.Wait(10);
+                    Usefull.Wait(10);
                 }
             }
 
