@@ -16,6 +16,7 @@ import javafx.scene.Node;
 
 
 public class MainTestClass extends Application {
+    private static Timeline loop;
     @Override
     public void start(Stage stage) throws IOException {
 
@@ -36,26 +37,17 @@ public class MainTestClass extends Application {
 
         stage.setTitle("Witch Dash");
 
-        Witch witch = new Witch();
-        Pumpkin pumpkin =new Pumpkin();
 
+        //Scene creation
+        int sceneY=0;
+        int sceneWidth=800;
+        int sceneHeight=400;
+        Witch witch = new Witch();
+        Pumpkin pumpkin =new Pumpkin(sceneWidth,sceneY,sceneHeight);
         Group root = new Group(witch.getRectangle());
         Rectangle rectangle1 = new Rectangle(200, 20, 20, 20);
         root.getChildren().addAll(rectangle1,pumpkin.getRectangle());
-
-
-        /*timeline diffinition
-        final Timeline timeline = new Timeline();
-        timeline.setCycleCount(2);
-        timeline.setAutoReverse(true);
-        timeline.getKeyFrames().add(new KeyFrame(Duration.millis(5000),
-                new KeyValue (witch.getRectangle().translateXProperty(), 25), new KeyValue (rectangle1.translateXProperty(), 25)));
-*/
-
-        //Scene creation
-        int SceneXsize = 800;
-        int SceneYsize = 400;
-        Scene witchDashScene = new Scene(root, SceneXsize, SceneYsize);
+        Scene witchDashScene = new Scene(root, sceneWidth, sceneHeight);
         stage.setScene(witchDashScene);
         //timeline.play();
         /*while ((pumpkin.getRectangle().getX() >= 0)) {
@@ -70,6 +62,7 @@ public class MainTestClass extends Application {
             );*/
         pumpkin.getRectangle().setY(witch.getRectangle().getY());
         pumpkin.getRectangle().setX(witchDashScene.getWidth()+pumpkin.getRectangle().getWidth());
+
         /*witch.testCollision(pumpkin.getRectangle())
             Timeline timeline = new Timeline(
                     new KeyFrame(Duration.ZERO,
@@ -88,49 +81,21 @@ public class MainTestClass extends Application {
         }
             //pumpkin.getRectangle().setX(pumpkin.getRectangle().getX()-10;
         //}*/
-        Timeline loop = new Timeline(new KeyFrame(Duration.millis(5),
-                new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent arg) {
 
-                // Pumpkin Movement
-                pumpkin.movePumpkin(1,0);
+        loop= new Timeline(new KeyFrame(Duration.millis(1000),
+                arg -> {
 
-                // haut
-                if (ball.getCenterY() <= (rball / 2)) {
-                    ballSpeedY = -dy;
-                }
+                    // Pumpkin Movement
+                    pumpkin.movePumpkin(-1,0);
 
-                // bas
-                if (ball.getCenterY() >= rectY) {
-                    if (ball.getCenterX() >= joueur.getX() && ball.getCenterX() <= joueur.getX() + lrect) {
-                        dx += 0.25;
-                        dy += 0.25;
-                        ballSpeedY = dy;
-                        score += 1;
+                    // collision bas
+                    if (witch.testCollision(pumpkin.getRectangle())) {
+                        loop.stop();
                     }
-                }
-
-                // gauche
-                if (ball.getCenterX() <= (rball / 2)) {
-                    ballSpeedX = dx;
-                }
-
-                // droit
-                if (ball.getCenterX() >= (psx - (rball / 2))) {
-                    ballSpeedX = -dx;
-                }
-
-                // collision bas
-                if (ball.getCenterY() >= (psy - (rball / 2))) {
-                    text.setVisible(true);
-                    message.setVisible(true);
-                    loop.stop();
-                }
-
-            }
-
-
-    }));
+                }));
+        loop.setCycleCount(Timeline.INDEFINITE);
+        loop.play();
+        stage.show();
 
                     /*scene.setOnKeyPressed(new EventHandler<KeyEvent>() { // detecte si on a appui� sur une touche
                         public void handle(KeyEvent event) {

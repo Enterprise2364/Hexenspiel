@@ -6,7 +6,7 @@ import javafx.scene.shape.*;
 
 public class Witch {
     private Rectangle rectangle = new Rectangle();
-    private int witchSpeed=8;
+    private int speed =8;
 
     public Witch() {
         this.rectangle.setX(10);
@@ -43,14 +43,30 @@ public class Witch {
     }*/
 
     public void moveWitch(int changementX,int changementY){
-        this.rectangle.setX(this.rectangle.getX()+changementX*this.witchSpeed);
-        this.rectangle.setY(this.rectangle.getY()+changementY*this.witchSpeed);
+        this.rectangle.setX(this.rectangle.getX()+changementX*this.speed);
+        this.rectangle.setY(this.rectangle.getY()+changementY*this.speed);
+    }
+    public void moveDown() {
+        this.rectangle.setY(this.rectangle.getY() - this.speed);
+    }
+
+    public void moveUp() {
+        this.rectangle.setY(this.rectangle.getY() + this.speed);
+    }
+
+    public void moveRight() {
+        this.rectangle.setX(this.rectangle.getX() + this.speed);
+    }
+
+    public void moveLeft() {
+        this.rectangle.setX(this.rectangle.getX() - this.speed);
     }
 
     public boolean testCollision(Rectangle rectangle){
         CollisionTest collision = new CollisionTest(this.rectangle);
         return collision.testCollision(rectangle);
     }
+
     public Rectangle getRectangle() {
         return rectangle;
     }
@@ -59,12 +75,12 @@ public class Witch {
         this.rectangle = rectangle;
     }
 
-    public int getWitchSpeed() {
-        return witchSpeed;
+    public int getSpeed() {
+        return speed;
     }
 
-    public void setWitchSpeed(int witchSpeed) {
-        this.witchSpeed = witchSpeed;
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
 }
 

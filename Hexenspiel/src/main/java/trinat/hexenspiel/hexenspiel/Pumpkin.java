@@ -5,16 +5,17 @@ import javafx.scene.shape.Rectangle;
 
 public class Pumpkin {
     private Rectangle rectangle = new Rectangle();
-    private int pumpkinSpeed =8;
+    private int speed =8;
 
-    public Pumpkin() {
-        this.rectangle.setX(10);
-        this.rectangle.setY(10);
+    public Pumpkin(int sceneWidht,int scenePositionY,int sceneHeight) {
         this.rectangle.setHeight(20);
         this.rectangle.setWidth(20);
         this.rectangle.setFill(Color.ORANGE);
         this.rectangle.setArcWidth(2);
         this.rectangle.setArcHeight(2);
+        this.rectangle.setX(sceneWidht);
+        this.rectangle.setY(WitchDashRandomGenerator.random(scenePositionY,scenePositionY+sceneHeight-this.rectangle.getHeight()));
+
     }
 
     public Pumpkin(int positionX, int positionY, int Width, int Height, int ArcWidth, int ArcHeight){
@@ -41,9 +42,25 @@ public class Pumpkin {
         return witch;
     }*/
 
-    public void movePumpkin(int changementX,int changementY){
-        this.rectangle.setX(this.rectangle.getX()+changementX*this.pumpkinSpeed);
-        this.rectangle.setY(this.rectangle.getY()+changementY*this.pumpkinSpeed);
+    public void movePumpkin(int translateX,int translateY){
+        this.rectangle.setX(this.rectangle.getX()+translateX*this.speed);
+        this.rectangle.setY(this.rectangle.getY()+translateY*this.speed);
+    }
+
+    public void moveDown() {
+        this.rectangle.setY(this.rectangle.getY() - this.speed);
+    }
+
+    public void moveUp() {
+        this.rectangle.setY(this.rectangle.getY() + this.speed);
+    }
+
+    public void moveRight() {
+        this.rectangle.setX(this.rectangle.getX() + this.speed);
+    }
+
+    public void moveLeft() {
+        this.rectangle.setX(this.rectangle.getX() - this.speed);
     }
 
     public boolean testCollision(Rectangle rectangle){
@@ -58,11 +75,11 @@ public class Pumpkin {
         this.rectangle = rectangle;
     }
 
-    public int getPumpkinSpeed() {
-        return pumpkinSpeed;
+    public int getSpeed() {
+        return speed;
     }
 
-    public void setPumpkinSpeed(int witchSpeed) {
-        this.pumpkinSpeed = witchSpeed;
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
 }
