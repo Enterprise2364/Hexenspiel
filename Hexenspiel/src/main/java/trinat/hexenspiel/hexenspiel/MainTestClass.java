@@ -1,6 +1,8 @@
 package trinat.hexenspiel.hexenspiel;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
@@ -68,23 +70,76 @@ public class MainTestClass extends Application {
             );*/
         pumpkin.getRectangle().setY(witch.getRectangle().getY());
         pumpkin.getRectangle().setX(witchDashScene.getWidth()+pumpkin.getRectangle().getWidth());
-        while(!witch.testCollision(pumpkin.getRectangle())) {
+        /*witch.testCollision(pumpkin.getRectangle())
             Timeline timeline = new Timeline(
                     new KeyFrame(Duration.ZERO,
                             new KeyValue(
                                     rectangle1.translateXProperty(),
                                     pumpkin.getRectangle().getX())),
-                    new KeyFrame(Duration.millis(1),
+                    new KeyFrame(Duration.seconds(1),
                             new KeyValue(pumpkin.getRectangle().translateXProperty(),
-                                    pumpkin.getRectangle().getX()-1))
+                                    pumpkin.getRectangle().getX()-100))
             );
-            pumpkin.getRectangle().setX(pumpkin.getRectangle().getX()-1);
+            pumpkin.getRectangle().setX(pumpkin.getRectangle().getX()-100);
             timeline.play();
             stage.show();
+            timeline.stop();
 
         }
             //pumpkin.getRectangle().setX(pumpkin.getRectangle().getX()-10;
-        //}
+        //}*/
+        Timeline loop = new Timeline(new KeyFrame(Duration.millis(5),
+                new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent arg) {
+
+                // Pumpkin Movement
+                pumpkin.movePumpkin(1,0);
+
+                // haut
+                if (ball.getCenterY() <= (rball / 2)) {
+                    ballSpeedY = -dy;
+                }
+
+                // bas
+                if (ball.getCenterY() >= rectY) {
+                    if (ball.getCenterX() >= joueur.getX() && ball.getCenterX() <= joueur.getX() + lrect) {
+                        dx += 0.25;
+                        dy += 0.25;
+                        ballSpeedY = dy;
+                        score += 1;
+                    }
+                }
+
+                // gauche
+                if (ball.getCenterX() <= (rball / 2)) {
+                    ballSpeedX = dx;
+                }
+
+                // droit
+                if (ball.getCenterX() >= (psx - (rball / 2))) {
+                    ballSpeedX = -dx;
+                }
+
+                // collision bas
+                if (ball.getCenterY() >= (psy - (rball / 2))) {
+                    text.setVisible(true);
+                    message.setVisible(true);
+                    loop.stop();
+                }
+
+            }
+
+
+    }));
+
+                    /*scene.setOnKeyPressed(new EventHandler<KeyEvent>() { // detecte si on a appui� sur une touche
+                        public void handle(KeyEvent event) {
+                            if (event.getCode() == KeyCode.ESCAPE) {
+                                Main.mainScene();
+                            }
+                            event.consume();
+                        }
+                    });*/
 
         witchDashScene.setOnKeyPressed(e -> {
             if (e.getCode().equals(KeyCode.W) || e.getCode().equals(KeyCode.Z)) {
