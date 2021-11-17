@@ -5,7 +5,7 @@ import javafx.scene.shape.Rectangle;
 
 public class Pumpkin {
     private Rectangle rectangle = new Rectangle();
-    private int witchSpeed=8;
+    private int pumpkinSpeed =8;
 
     public Pumpkin() {
         this.rectangle.setX(10);
@@ -42,8 +42,8 @@ public class Pumpkin {
     }*/
 
     public void movePumpkin(int changementX,int changementY){
-        this.rectangle.setX(this.rectangle.getX()+changementX*this.witchSpeed);
-        this.rectangle.setY(this.rectangle.getY()+changementY*this.witchSpeed);
+        this.rectangle.setX(this.rectangle.getX()+changementX*this.pumpkinSpeed);
+        this.rectangle.setY(this.rectangle.getY()+changementY*this.pumpkinSpeed);
     }
 
     public boolean testCollision(Rectangle rectangle){
@@ -59,10 +59,10 @@ public class Pumpkin {
     }
 
     public int getPumpkinSpeed() {
-        return witchSpeed;
+        return pumpkinSpeed;
     }
 
     public void setPumpkinSpeed(int witchSpeed) {
-        this.witchSpeed = witchSpeed;
+        this.pumpkinSpeed = witchSpeed;
     }
 }

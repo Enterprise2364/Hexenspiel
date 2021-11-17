@@ -1,9 +1,11 @@
 package trinat.hexenspiel.hexenspiel;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
@@ -22,6 +24,7 @@ public class WitchDashMain extends Application {
         witchDashStage.setTitle("Witch Dash");
 
         Witch witch= new Witch();
+        Pumpkin pumpkin =new Pumpkin();
 
         Group root = new Group(witch.getRectangle());
         Rectangle rectangle1= new Rectangle(200,20,20,20);
@@ -34,8 +37,10 @@ public class WitchDashMain extends Application {
         witchDashStage.setScene(witchDashScene);
         witchDashStage.show();
 
-        witchDashScene.setOnKeyPressed(e -> {
-            if (e.getCode().equals(KeyCode.W) || e.getCode().equals(KeyCode.Z)) {
+
+
+        //witchDashScene.setEventHandler(KeyEvent.KEY_PRESSED, (EventHandler)witchDashScene.get());
+        witchDashScene.setOnKeyPressed(e -> {if (e.getCode().equals(KeyCode.W) || e.getCode().equals(KeyCode.Z)) {
                 if (witch.getRectangle().getY() <=0){
                     witch.moveWitch(0,1);
                 }

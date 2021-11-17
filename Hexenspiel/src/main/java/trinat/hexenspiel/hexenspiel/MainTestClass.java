@@ -35,26 +35,57 @@ public class MainTestClass extends Application {
         stage.setTitle("Witch Dash");
 
         Witch witch = new Witch();
+        Pumpkin pumpkin =new Pumpkin();
 
         Group root = new Group(witch.getRectangle());
         Rectangle rectangle1 = new Rectangle(200, 20, 20, 20);
-        root.getChildren().add(rectangle1);
+        root.getChildren().addAll(rectangle1,pumpkin.getRectangle());
 
-        //timeline diffinition
+
+        /*timeline diffinition
         final Timeline timeline = new Timeline();
         timeline.setCycleCount(2);
         timeline.setAutoReverse(true);
         timeline.getKeyFrames().add(new KeyFrame(Duration.millis(5000),
                 new KeyValue (witch.getRectangle().translateXProperty(), 25), new KeyValue (rectangle1.translateXProperty(), 25)));
-
+*/
 
         //Scene creation
         int SceneXsize = 800;
         int SceneYsize = 400;
         Scene witchDashScene = new Scene(root, SceneXsize, SceneYsize);
         stage.setScene(witchDashScene);
-        stage.show();
-        timeline.play();
+        //timeline.play();
+        /*while ((pumpkin.getRectangle().getX() >= 0)) {
+            Timeline timeline = new Timeline(
+                    new KeyFrame(Duration.ZERO,
+                            new KeyValue(
+                                    pumpkin.getRectangle().translateXProperty(),
+                                    pumpkin.getRectangle().getX())),
+                    new KeyFrame(Duration.seconds(10),
+                            new KeyValue(pumpkin.getRectangle().translateXProperty(),
+                                    pumpkin.getRectangle().getX() - stage.getWidth()-pumpkin.getRectangle().getWidth()))
+            );*/
+        pumpkin.getRectangle().setY(witch.getRectangle().getY());
+        pumpkin.getRectangle().setX(witchDashScene.getWidth()+pumpkin.getRectangle().getWidth());
+        while(!witch.testCollision(pumpkin.getRectangle())) {
+            Timeline timeline = new Timeline(
+                    new KeyFrame(Duration.ZERO,
+                            new KeyValue(
+                                    rectangle1.translateXProperty(),
+                                    pumpkin.getRectangle().getX())),
+                    new KeyFrame(Duration.millis(1),
+                            new KeyValue(pumpkin.getRectangle().translateXProperty(),
+                                    pumpkin.getRectangle().getX()-1))
+            );
+            pumpkin.getRectangle().setX(pumpkin.getRectangle().getX()-1);
+            timeline.play();
+            stage.show();
+
+        }
+            //pumpkin.getRectangle().setX(pumpkin.getRectangle().getX()-10;
+        //}
+
         witchDashScene.setOnKeyPressed(e -> {
             if (e.getCode().equals(KeyCode.W) || e.getCode().equals(KeyCode.Z)) {
                 if (witch.getRectangle().getY() <= 0) {
