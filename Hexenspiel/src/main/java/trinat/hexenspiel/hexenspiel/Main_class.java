@@ -6,17 +6,26 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.scene.Group;
-
+import javafx.animation.*;
+import javafx.util.Duration;
 import java.io.IOException;
+import javafx.scene.Node;
 
 
 public class Main_class extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
+        /*timeline diffinition
+        final Timeline timeline = new Timeline();
+        timeline.setCycleCount(2);
+        timeline.setAutoReverse(true);
+        timeline.getKeyFrames().add(new KeyFrame(Duration.millis(5000),
+                new KeyValue (node.translateXProperty(), 25)));
+        timeline.play();*/
 
         //définition Squares parameter
-        int positionwX=200;
+        int positionwX=100;
         int positionwY=100;
         int positionoX=250;
         int positionoY=250;
@@ -38,39 +47,45 @@ public class Main_class extends Application {
         int SceneYsize=500;
         Scene playground = new Scene(root,SceneXsize,SceneYsize);
         stage.setScene(playground);
+        stage.show();
 
 
-        // Witch mouvement configuration
-        int speed=8;
-        int i=0;
-        while (!CollisionTest.testCollision(w,o)&(i<100)) {
+            // Witch mouvement configuration
+            int speed=8;
             playground.setOnKeyPressed(e -> {
                 if (e.getCode().equals(KeyCode.W) || e.getCode().equals(KeyCode.Z)) {
-                    if (w.getY() <= 0) {
-                        Witch.Rectangle_Translation(w, 0, speed);
-                    } else {
-                        Witch.Rectangle_Translation(w, 0, -1 * speed);
+                    if (w.getY() <=0){
+                        Witch.Rectangle_Translation(w,0,speed);
+                    }
+                    else{
+                        Witch.Rectangle_Translation(w,0,-1*speed);
                     }
 
-                } else if (e.getCode().equals(KeyCode.S)) {
-                    if (w.getY() >= playground.getHeight() - hit_boxHeight) {
-                        Witch.Rectangle_Translation(w, 0, -1 * speed);
-                    } else {
-                        Witch.Rectangle_Translation(w, 0, speed);
+                }
+                else if (e.getCode().equals(KeyCode.S)) {
+                    if (w.getY()>= playground.getHeight()-hit_boxHeight){
+                        Witch.Rectangle_Translation(w,0,-1*speed);
+                    }
+                    else {
+                        Witch.Rectangle_Translation(w,0,speed);
                     }
 
-                } else if (e.getCode().equals(KeyCode.D)) {
-                    if (w.getX() >= playground.getWidth() - hit_boxWidth) {
-                        Witch.Rectangle_Translation(w, -1 * speed, 0);
-                    } else {
-                        Witch.Rectangle_Translation(w, speed, 0);
+                }
+                else if (e.getCode().equals(KeyCode.D)) {
+                    if (w.getX() >=playground.getWidth()-hit_boxWidth){
+                        Witch.Rectangle_Translation(w,-1*speed,0);
+                    }
+                    else{
+                        Witch.Rectangle_Translation(w,speed,0);
                     }
 
-                } else if (e.getCode().equals(KeyCode.Q) || e.getCode().equals(KeyCode.A)) {
-                    if (w.getX() <= 0) {
-                        Witch.Rectangle_Translation(w, speed, 0);
-                    } else {
-                        Witch.Rectangle_Translation(w, -1 * speed, 0);
+                }
+                else if (e.getCode().equals(KeyCode.Q) || e.getCode().equals(KeyCode.A)) {
+                    if (w.getX() <=0){
+                        Witch.Rectangle_Translation(w,speed,0);
+                    }
+                    else{
+                        Witch.Rectangle_Translation(w,-1*speed,0);
                     }
                 }
                 /*
@@ -116,22 +131,20 @@ public class Main_class extends Application {
 
             //obstacle mouvement configuration
 
-            //for (int i = 0; i < 100; i++) {
-                if (o.getX() <= -2 * o.getWidth()) {
-                    o.setY(positionwY);//Usefull.Random(SceneYsize - o.getHeight(), 0)
-                    o.setX(2 * o.getWidth()+SceneXsize);
-                } else {
-                    Pumpkin.Rectangle_Translation(o, -1 * speed);
-                    Usefull.Wait(100);
+            for (int i = 0; i <1; i++) {
+                if (o.getX()<=-2*o.getWidth()){
+                    o.setY(Usefull.Random(SceneYsize-o.getHeight(),0));
+                    o.setX(-2*o.getWidth());
                 }
-                i++;
-                stage.show();
-
+                else{
+                    Pumpkin.Rectangle_Translation(o,-1*speed);
+                    Usefull.Wait(10);
+                }
             }
-        //}
+        }
 
 
-    }
+
 
 
 

@@ -11,16 +11,16 @@ import javafx.stage.Stage;
 public class Witch {
     public static Rectangle Hit_box_witch (int positionX,int positionY,int Width,int Height,int ArcWidth,int ArcHeight){
         //creating a shape
-        Rectangle r = new Rectangle();
-        r.setX(positionX);
-        r.setY(positionY);
-        r.setWidth(Width);
-        r.setHeight(Height);
-        r.setArcWidth(ArcWidth);
-        r.setArcHeight(ArcHeight);
-        r.setFill(Color.BLUE);
+        Rectangle witch = new Rectangle();
+        witch.setX(positionX);
+        witch.setY(positionY);
+        witch.setWidth(Width);
+        witch.setHeight(Height);
+        witch.setArcWidth(ArcWidth);
+        witch.setArcHeight(ArcHeight);
+        witch.setFill(Color.BLUE);
         //returning the shape
-        return r;
+        return witch;
     }
 
     /*public static Image Witch_image (Stage primaryStage){
