@@ -3,11 +3,11 @@ package trinat.hexenspiel.hexenspiel;
 
 import javafx.scene.shape.Rectangle;
 
-public class CollisonTest {
+public class CollisionTest {
     private Rectangle myRectangle= new Rectangle();
     private Rectangle rectangle= new Rectangle();
 
-    public CollisonTest(double myX, double myY, double myWidth, double myHeight, double x, double y, double width, double height) {
+    public CollisionTest(double myX, double myY, double myWidth, double myHeight, double x, double y, double width, double height) {
         myRectangle.setX(myX);
         myRectangle.setY(myY);
         myRectangle.setWidth(myWidth);
@@ -17,12 +17,12 @@ public class CollisonTest {
         myRectangle.setWidth(width);
         myRectangle.setHeight(height);
     }
-    public CollisonTest(Rectangle myRectangle, Rectangle rectangle) {
+    public CollisionTest(Rectangle myRectangle, Rectangle rectangle) {
         this.myRectangle=myRectangle;
         this.rectangle=rectangle;
     }
 
-    public CollisonTest(Rectangle myRectangle) {
+    public CollisionTest(Rectangle myRectangle) {
         this.myRectangle = myRectangle;
     }
 
