@@ -4,7 +4,10 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.*;
+import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
@@ -20,7 +23,7 @@ public class Main extends Application {
     public int posY = 200;
     public int height = 100;
     public int width = 40;
-    public int sceneSizeX = 600;
+    public int sceneSizeX = 1500;
     public int sceneSizeY = 500;
 
 
@@ -45,14 +48,23 @@ public class Main extends Application {
         stage.show();
 
         //Movement pumpkin
-        while ((pumpkinX >= 0)) {
-            Timeline timeline = new Timeline(
-                    new KeyFrame(Duration.ZERO, new KeyValue(pumpkin.translateXProperty(), pumpkinX)),
-                    new KeyFrame(Duration.minutes(2), new KeyValue(pumpkin.translateXProperty(), pumpkinX - 10000))
-            );
+            Timeline timeline = new Timeline(new KeyFrame(Duration.millis(500), new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent actionEvent) {
+                    Pumpkin.Rectangle_Translation(pumpkin, -100);
+
+                    scene.setOnKeyPressed(e -> {
+                        if (e.getCode().equals(KeyCode.W) || e.getCode().equals(KeyCode.Z)) {
+
+                            Witch.Rectangle_Translation(pumpkin, posX, posY, 10, 0);
+                        } else {
+                            Witch.Rectangle_Translation(pumpkin, posX, posY, -10, 0);
+                        }
+                    }
+                }
+            })));
+            timeline.setCycleCount(Timeline.INDEFINITE);
             timeline.play();
             stage.show();
-            pumpkinX=pumpkinX-10;
-        }
     }
 }
