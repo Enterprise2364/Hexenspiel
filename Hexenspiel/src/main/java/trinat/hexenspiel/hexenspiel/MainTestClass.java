@@ -12,14 +12,20 @@ import javafx.scene.Group;
 import javafx.animation.*;
 import javafx.util.Duration;
 import java.io.IOException;
-import javafx.scene.Node;
 
 
 public class MainTestClass extends Application {
     private static Timeline loop;
+    protected static Stage witchDashStage;
+    protected static Stage gameOverStage;
     @Override
-    public void start(Stage stage) throws IOException {
 
+    public void start(Stage stage) throws IOException {
+        MainTestClass.witchDashStage = stage;
+        MainTestClass.witchDashMainScene();
+
+    }
+    public static void witchDashMainScene()throws IOException{
 
         //définition Squares parameter
         int positionwX = 100;
@@ -29,13 +35,13 @@ public class MainTestClass extends Application {
         int hit_boxWidth = 25;
         int hit_boxHeight = 25;
 
-        FXMLLoader fxmlLoader = new FXMLLoader(WitchDashMain.
+        FXMLLoader fxmlLoader = new FXMLLoader(MainTestClass.
                 class.
                 getResource("witchDash-view.fxml"));
 
         //Scene witchDashScene = new Scene(fxmlLoader.load(), 800, 400);
 
-        stage.setTitle("Witch Dash");
+        witchDashStage.setTitle("Witch Dash");
 
 
         //Scene creation
@@ -48,7 +54,7 @@ public class MainTestClass extends Application {
         Rectangle rectangle1 = new Rectangle(200, 20, 20, 20);
         root.getChildren().addAll(rectangle1,pumpkin.getRectangle());
         Scene witchDashScene = new Scene(root, sceneWidth, sceneHeight);
-        stage.setScene(witchDashScene);
+        witchDashStage.setScene(witchDashScene);
         //timeline.play();
         /*while ((pumpkin.getRectangle().getX() >= 0)) {
             Timeline timeline = new Timeline(
@@ -82,8 +88,8 @@ public class MainTestClass extends Application {
             //pumpkin.getRectangle().setX(pumpkin.getRectangle().getX()-10;
         //}*/
 
-        loop= new Timeline(new KeyFrame(Duration.millis(1000),
-                arg -> {
+        loop= new Timeline(new KeyFrame(Duration.millis(1000),new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent arg) {
 
                     // Pumpkin Movement
                     pumpkin.movePumpkin(-1,0);
@@ -91,11 +97,16 @@ public class MainTestClass extends Application {
                     // collision bas
                     if (witch.testCollision(pumpkin.getRectangle())) {
                         loop.stop();
+                        try {
+                            gameOver();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
-                }));
+                }}));
         loop.setCycleCount(Timeline.INDEFINITE);
         loop.play();
-        stage.show();
+        witchDashStage.show();
 
                     /*scene.setOnKeyPressed(new EventHandler<KeyEvent>() { // detecte si on a appui� sur une touche
                         public void handle(KeyEvent event) {
@@ -142,13 +153,14 @@ public class MainTestClass extends Application {
     }
 
 
-
-
-
-
-
-
-
+    public static void gameOver() throws IOException {
+        gameOverStage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainTestClass.class.getResource("gameOverView.fxml"));
+        Scene gameOverScene = new Scene(fxmlLoader.load(), 320, 240);
+        gameOverStage.setTitle("Game over");
+        gameOverStage.setScene(gameOverScene);
+        gameOverStage.show();
+    }
 
         public static void main(String[] args) {
 
