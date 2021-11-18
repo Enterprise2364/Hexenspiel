@@ -142,12 +142,6 @@ public class WitchDashMain extends Application {
         loop.play();
         witchDashStage.show();
 
-
-
-
-
-
-
     }
 
 
