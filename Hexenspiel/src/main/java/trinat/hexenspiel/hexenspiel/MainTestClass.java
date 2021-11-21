@@ -92,7 +92,7 @@ public class MainTestClass extends Application {
             public void handle(ActionEvent arg) {
 
                     // Pumpkin Movement
-                    pumpkin.movePumpkin(-1,0);
+                    pumpkin.moveFigure(-1,0);
 
                     // collision bas
                     if (witch.testCollision(pumpkin.getRectangle())) {
@@ -120,31 +120,31 @@ public class MainTestClass extends Application {
         witchDashScene.setOnKeyPressed(e -> {
             if (e.getCode().equals(KeyCode.W) || e.getCode().equals(KeyCode.Z)) {
                 if (witch.getRectangle().getY() <= 0) {
-                    witch.moveWitch(0, 1);
+                    witch.moveFigure(0, 1);
                 } else {
-                    witch.moveWitch(0, -1);
+                    witch.moveFigure(0, -1);
                 }
 
             } else if (e.getCode().equals(KeyCode.S)) {
                 if (witch.getRectangle().getY() >= witchDashScene.getHeight() - witch.getRectangle().getHeight()) {
-                    witch.moveWitch(0, -1);
+                    witch.moveFigure(0, -1);
                 } else {
-                    witch.moveWitch(0, +1);
+                    witch.moveFigure(0, +1);
                 }
 
             } else if (e.getCode().equals(KeyCode.D)) {
                 if (witch.getRectangle().getX() >= witchDashScene.getWidth() - witch.getRectangle().getWidth()) {
-                    witch.moveWitch(-1, 0);
+                    witch.moveFigure(-1, 0);
                 } else {
-                    witch.moveWitch(1, 0);
+                    witch.moveFigure(1, 0);
                 }
 
             } else if (e.getCode().equals(KeyCode.Q) || e.getCode().equals(KeyCode.A)) {
                 if (witch.getRectangle().getX() <= 0) {
 
-                    witch.moveWitch(+1, 0);
+                    witch.moveFigure(+1, 0);
                 } else {
-                    witch.moveWitch(-1, 0);
+                    witch.moveFigure(-1, 0);
                 }
 
 
