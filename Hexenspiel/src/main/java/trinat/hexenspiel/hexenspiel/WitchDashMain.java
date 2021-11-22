@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.scene.input.KeyCode;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -21,16 +22,11 @@ public class WitchDashMain extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        WitchDashMain.witchDashMainStage = stage;
-        WitchDashMain.witchDashMainScene();
+        witchDashMainStage = stage;
+        witchDashMainScene();
     }
+
     public static void witchDashMainScene(){
-
-        /*FXMLLoader fxmlLoader = new FXMLLoader(WitchDashMain.
-                                                class.
-                                                getResource("witchDash-view.fxml"));
-
-        Scene witchDashScene = new Scene(fxmlLoader.load(), 800, 400);*/
 
         //Set Stage
         witchDashMainStage.setTitle("Witch Dash");
@@ -43,7 +39,7 @@ public class WitchDashMain extends Application {
         int sceneHeight=400;
         int witchSpeed=10;
         int pumpkinSpeed=1;
-        Witch witch= new Witch();
+        Witch witch= new Witch(2,4,40,40, 2,2);
         Pumpkin pumpkin =new Pumpkin(sceneWidth,
                                         sceneY,
                                         sceneHeight);

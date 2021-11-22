@@ -1,11 +1,10 @@
 package trinat.hexenspiel.hexenspiel;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class WitchDashRandomGeneratorTest {
+public class RandomNumberGeneratorTest {
     private double max;
     private double min;
 
@@ -18,7 +17,7 @@ public class WitchDashRandomGeneratorTest {
     @Test
     public void testLimit(){
 
-        assertEquals(min,WitchDashRandomGenerator.random(min,max),max);
+        assertEquals(min, RandomNumberGenerator.random(min,max),max);
 
     }
 }
