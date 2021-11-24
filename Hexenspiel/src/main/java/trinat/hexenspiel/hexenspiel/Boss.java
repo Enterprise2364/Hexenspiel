@@ -3,11 +3,15 @@ package trinat.hexenspiel.hexenspiel;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-public class Pumpkin {
-    private Rectangle rectangle = new Rectangle();
-    private int pumpkinSpeed =8;
+public class Boss {
 
-    public Pumpkin() {
+    //initial boss parameter
+    private Rectangle rectangle = new Rectangle();
+    private int witchSpeed=8;
+    private Life bosslife=new Life(6,0);
+
+    //boss hit_box initialisation
+    public Boss() {
         this.rectangle.setX(10);
         this.rectangle.setY(10);
         this.rectangle.setHeight(25);
@@ -17,7 +21,8 @@ public class Pumpkin {
         this.rectangle.setArcHeight(2);
     }
 
-    public Pumpkin(int positionX, int positionY, int Width, int Height, int ArcWidth, int ArcHeight){
+    //boss hit_box modification
+    public Boss(int positionX, int positionY, int Width, int Height, int ArcWidth, int ArcHeight){
         this.rectangle.setX(positionX);
         this.rectangle.setY(positionY);
         this.rectangle.setWidth(Width);
@@ -26,9 +31,6 @@ public class Pumpkin {
         this.rectangle.setArcHeight(ArcHeight);
         this.rectangle.setFill(Color.BLUE);
     }
-
-
-
 
 
     /*public static Image Witch_image (Stage primaryStage){
@@ -41,28 +43,38 @@ public class Pumpkin {
         return witch;
     }*/
 
-    public void movePumpkin(int changementX,int changementY){
-        this.rectangle.setX(this.rectangle.getX()+changementX*this.pumpkinSpeed);
-        this.rectangle.setY(this.rectangle.getY()+changementY*this.pumpkinSpeed);
+    //Boss mouvement
+    public void moveBoss(int changementX,int changementY){
+        this.rectangle.setX(this.rectangle.getX()+changementX*this.witchSpeed);
+        this.rectangle.setY(this.rectangle.getY()+changementY*this.witchSpeed);
     }
 
-    public boolean testCollision(Rectangle rectangle){
+    //Boss life modification
+    public Life TemporaryBosslife(Rectangle projectil,Life bosslife){
         CollisionTest collision = new CollisionTest(this.rectangle);
-        return collision.testCollision(rectangle);
+        if (collision.testCollision(projectil)){
+            this.bosslife.setHit_point(this.bosslife.getHit_point()+1);
+        }
+        return bosslife;
     }
+
+    // get hit_box parameter
     public Rectangle getRectangle() {
         return rectangle;
     }
 
+    // set hit_box parameter
     public void setRectangle(Rectangle rectangle) {
         this.rectangle = rectangle;
     }
 
-    public int getPumpkinSpeed() {
-        return pumpkinSpeed;
+    // get Boss speed
+    public int getWitchSpeed() {
+        return witchSpeed;
     }
 
-    public void setPumpkinSpeed(int witchSpeed) {
-        this.pumpkinSpeed = witchSpeed;
+    // set Boss speed
+    public void setWitchSpeed(int witchSpeed) {
+        this.witchSpeed = witchSpeed;
     }
 }

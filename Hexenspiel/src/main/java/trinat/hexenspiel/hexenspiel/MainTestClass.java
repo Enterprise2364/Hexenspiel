@@ -35,6 +35,7 @@ public class MainTestClass extends Application {
         stage.setTitle("Witch Dash");
 
         Witch witch = new Witch();
+        Pumpkin pumpkin = new Pumpkin();
 
         Group root = new Group(witch.getRectangle());
         Rectangle rectangle1 = new Rectangle(200, 20, 20, 20);
@@ -42,10 +43,29 @@ public class MainTestClass extends Application {
 
         //timeline diffinition
         final Timeline timeline = new Timeline();
-        timeline.setCycleCount(2);
+        timeline.setCycleCount(1);
         timeline.setAutoReverse(true);
-        timeline.getKeyFrames().add(new KeyFrame(Duration.millis(5000),
-                new KeyValue (witch.getRectangle().translateXProperty(), 25), new KeyValue (rectangle1.translateXProperty(), 25)));
+
+        KeyValue pumpkin_animation = new KeyValue (pumpkin.getRectangle().translateXProperty(),1);
+        KeyFrame Start = new KeyFrame(Duration.millis(1000),pumpkin_animation);
+        timeline.getKeyFrames().add(Start);
+
+        KeyValue witch_animation_up = new KeyValue (pumpkin.getRectangle().translateYProperty(), 1);
+        KeyFrame Witch_animation_up = new KeyFrame(Duration.millis(1000),witch_animation_up);
+        timeline.getKeyFrames().add(Witch_animation_up);
+
+        KeyValue witch_animation_down = new KeyValue (pumpkin.getRectangle().translateYProperty(), -1);
+        KeyFrame Witch_animation_down = new KeyFrame(Duration.millis(1000),witch_animation_down);
+        timeline.getKeyFrames().add(Witch_animation_down);
+
+        KeyValue witch_animation_right = new KeyValue (pumpkin.getRectangle().translateXProperty(), 1);
+        KeyFrame Witch_animation_right = new KeyFrame(Duration.millis(1000),witch_animation_right);
+        timeline.getKeyFrames().add(Witch_animation_right);
+
+        KeyValue witch_animation_left = new KeyValue (pumpkin.getRectangle().translateXProperty(), -1);
+        KeyFrame Witch_animation_left = new KeyFrame(Duration.millis(1000),witch_animation_left);
+        timeline.getKeyFrames().add(Witch_animation_left);
+
 
 
         //Scene creation
@@ -55,6 +75,7 @@ public class MainTestClass extends Application {
         stage.setScene(witchDashScene);
         stage.show();
         timeline.play();
+
         witchDashScene.setOnKeyPressed(e -> {
             if (e.getCode().equals(KeyCode.W) || e.getCode().equals(KeyCode.Z)) {
                 if (witch.getRectangle().getY() <= 0) {

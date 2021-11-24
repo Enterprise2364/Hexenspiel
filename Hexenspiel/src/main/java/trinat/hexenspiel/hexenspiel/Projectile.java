@@ -3,11 +3,11 @@ package trinat.hexenspiel.hexenspiel;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-public class Pumpkin {
+public class Projectile {
     private Rectangle rectangle = new Rectangle();
-    private int pumpkinSpeed =8;
+    private int projectileSpeed =8;
 
-    public Pumpkin() {
+    public Projectile() {
         this.rectangle.setX(10);
         this.rectangle.setY(10);
         this.rectangle.setHeight(25);
@@ -17,7 +17,7 @@ public class Pumpkin {
         this.rectangle.setArcHeight(2);
     }
 
-    public Pumpkin(int positionX, int positionY, int Width, int Height, int ArcWidth, int ArcHeight){
+    public Projectile(int positionX, int positionY, int Width, int Height, int ArcWidth, int ArcHeight){
         this.rectangle.setX(positionX);
         this.rectangle.setY(positionY);
         this.rectangle.setWidth(Width);
@@ -27,23 +27,18 @@ public class Pumpkin {
         this.rectangle.setFill(Color.BLUE);
     }
 
-
-
-
-
     /*public static Image Witch_image (Stage primaryStage){
-        //calling an image
-        InputStream iconStream = Witch.class.getResourceAsStream("src/main/resources/trinat/hexenspiel/hexenspiel/witch.png");
-        Image witch = new Image(iconStream);
-        //adding tne image to the stage
-        primaryStage.getIcons().add(witch);
-        //returning the image
-        return witch;
-    }*/
-
-    public void movePumpkin(int changementX,int changementY){
-        this.rectangle.setX(this.rectangle.getX()+changementX*this.pumpkinSpeed);
-        this.rectangle.setY(this.rectangle.getY()+changementY*this.pumpkinSpeed);
+    //calling an image
+    InputStream iconStream = Witch.class.getResourceAsStream("src/main/resources/trinat/hexenspiel/hexenspiel/witch.png");
+    Image witch = new Image(iconStream);
+    //adding tne image to the stage
+    primaryStage.getIcons().add(witch);
+    //returning the image
+    return witch;
+}*/
+    public void moveProjectile(int changementX,int changementY){
+        this.rectangle.setX(this.rectangle.getX()+changementX*this.projectileSpeed);
+        this.rectangle.setY(this.rectangle.getY()+changementY*this.projectileSpeed);
     }
 
     public boolean testCollision(Rectangle rectangle){
@@ -58,11 +53,12 @@ public class Pumpkin {
         this.rectangle = rectangle;
     }
 
-    public int getPumpkinSpeed() {
-        return pumpkinSpeed;
+    public int getProjectileSpeed() {
+        return projectileSpeed;
     }
 
-    public void setPumpkinSpeed(int witchSpeed) {
-        this.pumpkinSpeed = witchSpeed;
+    public void setProjectileSpeed(int witchSpeed) {
+        this.projectileSpeed = witchSpeed;
     }
 }
+
