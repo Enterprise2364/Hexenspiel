@@ -10,7 +10,7 @@ public class CollisionTest {
         this.myRectangle=myRectangle;
         this.rectangle=rectangle;
     }
-g
+
     //Constructor for the case that one Rectangle need to check collisons with multiple objects
     public CollisionTest(Rectangle myRectangle) {
         this.myRectangle = myRectangle;
