@@ -14,6 +14,7 @@ public class WitchDashEngine {
             pumpkins.add(new Pumpkin(this.witchDashMainEngineStage.getWidth(),
                                         this.witchDashMainEngineStage.getY(),
                                         this.witchDashMainEngineStage.getHeight()));
+            //pumpkins.get(i).getRectangle().getX()-pumpkins.get(i).getRectangle().getWidth();
 
         }
     }

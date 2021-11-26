@@ -61,4 +61,5 @@ public abstract class GameFigures {
         this.speed = speed;
     }
 }
+// ToDo Set to random position
 
