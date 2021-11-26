@@ -7,7 +7,9 @@ public class Pumpkin extends GameFigures {
     private Rectangle rectangle = super.getRectangle();
     private int speed = 8;
 
-    public Pumpkin(double sceneWidth, double scenePositionY, double sceneHeight) {
+    public Pumpkin(double sceneWidth,
+                   double scenePositionY,
+                   double sceneHeight) {
         super();
         this.rectangle.setHeight(20);
         this.rectangle.setWidth(20);

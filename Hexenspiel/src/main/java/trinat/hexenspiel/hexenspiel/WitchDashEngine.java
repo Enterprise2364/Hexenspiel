@@ -5,13 +5,15 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 public class WitchDashEngine {
-    private Stage witchDashMainStage;
+    private Stage witchDashMainEngineStage;
     private ArrayList<Pumpkin>pumpkins=new ArrayList<>();
 
     public WitchDashEngine(Stage stage,int obstacleNumber){
-        this.witchDashMainStage=stage;
+        this.witchDashMainEngineStage = stage;
         for(int i=0;i<obstacleNumber;i++){
-            pumpkins.add(new Pumpkin(this.witchDashMainStage.getWidth(),this.witchDashMainStage.getY(),this.witchDashMainStage.getHeight()));
+            pumpkins.add(new Pumpkin(this.witchDashMainEngineStage.getWidth(),
+                                        this.witchDashMainEngineStage.getY(),
+                                        this.witchDashMainEngineStage.getHeight()));
 
         }
     }
@@ -26,12 +28,12 @@ public class WitchDashEngine {
 
     }
 
-    public Stage getWitchDashMainStage() {
-        return witchDashMainStage;
+    public Stage getWitchDashMainEngineStage() {
+        return witchDashMainEngineStage;
     }
 
-    public void setWitchDashMainStage(Stage witchDashMainStage) {
-        this.witchDashMainStage = witchDashMainStage;
+    public void setWitchDashMainEngineStage(Stage witchDashMainEngineStage) {
+        this.witchDashMainEngineStage = witchDashMainEngineStage;
     }
 
     public ArrayList<Pumpkin> getPumpkins() {
