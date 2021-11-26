@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Hexenspiel/Hexenspiel.iml" filepath="$PROJECT_DIR$/Hexenspiel/Hexenspiel.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Hexenspiel/Witchdash2.iml" filepath="$PROJECT_DIR$/Hexenspiel/Witchdash2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Hexenspiel.iml" filepath="$PROJECT_DIR$/.idea/Hexenspiel.iml" />
     </modules>
   </component>
 </project>

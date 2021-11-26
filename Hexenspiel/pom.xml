@@ -62,7 +62,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>trinat.hexenspiel.hexenspiel/trinat.hexenspiel.hexenspiel.HelloApplication
+                            <mainClass>trinat.hexenspiel.hexenspiel/trinat.hexenspiel.hexenspiel.MainTestClass
                             </mainClass>
                         </configuration>
                     </execution>
