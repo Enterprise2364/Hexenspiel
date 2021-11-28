@@ -56,7 +56,7 @@ public class EngineTestClass extends Application {
         Scene witchDashScene = new Scene(root, sceneWidth, sceneHeight);
         witchDashStage.setScene(witchDashScene);
         witchDashStage.show();
-        WitchDashEngine testEngine = new WitchDashEngine(witchDashStage, 4,8,1);
+        WitchDashEngine testEngine = new WitchDashEngine(witchDashStage, 4);
         root.getChildren().add(testEngine.getWitch().getRectangle());
         Pumpkin pumpkin =new Pumpkin(sceneWidth,sceneY,sceneHeight);
         root.getChildren().add(pumpkin.getRectangle());

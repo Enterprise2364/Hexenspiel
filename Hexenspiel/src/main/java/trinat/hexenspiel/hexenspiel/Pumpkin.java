@@ -17,7 +17,7 @@ public class Pumpkin extends GameFigures {
         this.rectangle.setArcHeight(2);
         this.rectangle.setX(sceneWidth);
         this.rectangle.setY(RandomNumberGenerator.random(scenePositionY,
-                                                        scenePositionY + sceneHeight - this.rectangle.getHeight()));
+                                                        (scenePositionY + sceneHeight) - this.rectangle.getHeight()));
 
     }
 
@@ -31,12 +31,7 @@ public class Pumpkin extends GameFigures {
         this.rectangle.setArcHeight(ArcHeight);
         this.rectangle.setFill(Color.BLUE);
     }
-    public void setToRandomYPosition(double sceneWidth,
-                                     double scenePositionY,
-                                     double sceneHeight){
-        this.rectangle.setY(RandomNumberGenerator.random(scenePositionY,
-                                                    scenePositionY + sceneHeight - this.rectangle.getHeight()));
-    }
+
 
 
 

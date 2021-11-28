@@ -24,7 +24,7 @@ public class WitchDashEngineTest {
     public void setUp(){
         sceneWidth = 800;
         sceneHeight = 400;
-        testEngine=new WitchDashEngine(sceneWidth,0,sceneHeight,5,8,1);
+        testEngine=new WitchDashEngine(sceneWidth,0,sceneHeight,0);
         testPumpkin = new Pumpkin(800,
                 0,
                 400);
@@ -32,12 +32,12 @@ public class WitchDashEngineTest {
 
     @Test
     public void testTestIfSameYPosition(){
-        testPumpkin.getRectangle().setY(50);
+        testPumpkin.getRectangle().setY(60);
         testEngine.getPumpkins().add(testPumpkin);
         Pumpkin testPumpkin1=new Pumpkin(800,
                 0,
                 400);
-        testPumpkin1.getRectangle().setY(80);
+        testPumpkin1.getRectangle().setY(40);
         assertEquals(true, testEngine.testIfSameYPosition(testEngine.getPumpkins(),testPumpkin1));
 
     }

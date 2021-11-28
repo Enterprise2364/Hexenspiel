@@ -7,35 +7,35 @@ public class WitchDashEngine {
     private Stage witchDashMainEngineStage;
     private ArrayList <Pumpkin> pumpkins=new ArrayList<>();
     private Witch witch=new Witch();
+    private int witchSpeed=10;
+    private int pumpkinSpeed=1;
 
-    public WitchDashEngine(double sceneWidth, double scenePositionY, double sceneHeight,int obstacleNumber,int witchSpeed,int pumpkinSpeed) {
+    public WitchDashEngine(double sceneWidth, double scenePositionY, double sceneHeight,int obstacleNumber) {
+        witch.setSpeed(witchSpeed);
         for (int i = 0; i < obstacleNumber; i++) {
             pumpkins.add(new Pumpkin(sceneWidth,
                                 scenePositionY,
                                 sceneHeight));
+            pumpkins.get(i).setSpeed(pumpkinSpeed);
         }
     }
 
-    public WitchDashEngine(Stage stage,int obstacleNumber,int witchSpeed,int pumpkinSpeed){
+    public WitchDashEngine(Stage stage,int obstacleNumber){
         this.witchDashMainEngineStage = stage;
+        witch.setSpeed(witchSpeed);
         for(int i=0;i<obstacleNumber;i++){
-            pumpkins.add(new Pumpkin(this.witchDashMainEngineStage.getWidth(),
-                    this.witchDashMainEngineStage.getY(),
-                    this.witchDashMainEngineStage.getHeight()));
             Pumpkin tempPumpkin= new Pumpkin(this.witchDashMainEngineStage.getWidth(),
                     this.witchDashMainEngineStage.getY(),
                     this.witchDashMainEngineStage.getHeight());
-            /*if (pumpkins.stream().anyMatch(pumpkin -> pumpkin.getRectangle().getY()>tempPumkin.getRectangle().getY())&& pumpkins.stream().anyMatch(pumpkin -> pumpkin.getRectangle().getY()<(tempPumkin.getRectangle().getY()+tempPumkin.getRectangle().getHeight())){
-                tempPumkin.setToRandomYPosition(this.witchDashMainEngineStage.getWidth(),
+            while (testIfSameYPosition(pumpkins,tempPumpkin)){
+
+                tempPumpkin.setToRandomYPosition(this.witchDashMainEngineStage.getWidth(),
                                                 this.witchDashMainEngineStage.getY(),
                                                 this.witchDashMainEngineStage.getHeight());
-                pumpkins.add(tempPumkin);
+
             }
-            else{
-                pumpkins.add(tempPumkin);
-            }*/
-
-
+            pumpkins.add(tempPumpkin);
+            pumpkins.get(i).setSpeed(pumpkinSpeed);
         }
     }
 
@@ -50,10 +50,12 @@ public class WitchDashEngine {
     }
 
     public boolean testIfSameYPosition(ArrayList<Pumpkin> pumpkinsPositionTest,Pumpkin pumpkinPositionTest){
-        if(pumpkinsPositionTest.stream().anyMatch(pumpkin -> pumpkin.getRectangle().getY()>pumpkinPositionTest.getRectangle().getY())){//&& (pumpkinsPositionTest.stream().anyMatch(pumpkin -> pumpkinPositionTest.getRectangle().getY()<(pumpkinPositionTest.getRectangle().getY()+pumpkinPositionTest.getRectangle().getHeight())))){
+        if(pumpkinsPositionTest.stream().anyMatch(pumpkin -> pumpkin.getRectangle().getY()>=pumpkinPositionTest.getRectangle().getY()) && (pumpkinsPositionTest.stream().anyMatch(pumpkin -> pumpkin.getRectangle().getY()<(pumpkinPositionTest.getRectangle().getY()+pumpkinPositionTest.getRectangle().getHeight())))) {
             return true;
         }
-        return false;
+        else{
+                return false;
+            }
     }
 
 
@@ -90,5 +92,21 @@ public class WitchDashEngine {
 
     public void setWitch(Witch witch) {
         this.witch = witch;
+    }
+
+    public int getWitchSpeed() {
+        return witchSpeed;
+    }
+
+    public void setWitchSpeed(int witchSpeed) {
+        this.witchSpeed = witchSpeed;
+    }
+
+    public int getPumpkinSpeed() {
+        return pumpkinSpeed;
+    }
+
+    public void setPumpkinSpeed(int pumpkinSpeed) {
+        this.pumpkinSpeed = pumpkinSpeed;
     }
 }

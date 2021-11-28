@@ -17,7 +17,7 @@ public class WitchDashMain extends Application {
     protected static Stage witchDashMainStage;
     protected static Stage gameOverStage;
     //Duration per Frame in millisec
-    private static final int durationPerFrameRate=50;
+    private static final int durationPerFrameRate=10;
 
 
     @Override
@@ -40,13 +40,14 @@ public class WitchDashMain extends Application {
         int witchSpeed=10;
         int pumpkinSpeed=1;
         Group root = new Group();
-        Scene witchDashScene = new Scene(root, sceneWidth, sceneHeight);
+        Scene witchDashScene = new Scene(root,
+                sceneWidth,
+                sceneHeight);
         witchDashMainStage.setScene(witchDashScene);
         witchDashMainStage.show();
-        WitchDashEngine witchDashEngine = new WitchDashEngine(witchDashMainStage, 4,witchSpeed,pumpkinSpeed);
+        WitchDashEngine witchDashEngine = new WitchDashEngine(witchDashMainStage, 4);
         root.getChildren().add(witchDashEngine.getWitch().getRectangle());
-        Pumpkin pumpkin =new Pumpkin(sceneWidth,sceneY,sceneHeight);
-        root.getChildren().add(pumpkin.getRectangle());
+
         for (int i=0;i<witchDashEngine.getPumpkins().size();i++){
             root.getChildren().add(witchDashEngine.getPumpkins().get(i).getRectangle());
             witchDashEngine.getPumpkins().get(i).getRectangle().setVisible(true);

@@ -60,7 +60,7 @@ public class MainTestClass extends Application {
 
         Scene witchDashScene = new Scene(root, sceneWidth, sceneHeight);
 
-        WitchDashEngine testEngine= new WitchDashEngine(witchDashStage,5,8,1);
+        WitchDashEngine testEngine= new WitchDashEngine(witchDashStage,5);
         root.getChildren().addAll(rectangle1,pumpkin.getRectangle(),testEngine.getPumpkins().get(2).getRectangle());
         /*for (int i=0;i<testEngine.getPumpkins().size();i++){
             root.getChildren().add(testEngine.getPumpkins().get(i).getRectangle());

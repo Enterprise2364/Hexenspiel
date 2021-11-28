@@ -60,6 +60,14 @@ public abstract class GameFigures {
     public void setSpeed(int speed) {
         this.speed = speed;
     }
+
+    public void setToRandomYPosition(double sceneWidth,
+                                     double scenePositionY,
+                                     double sceneHeight){
+        this.rectangle.setY(RandomNumberGenerator.random(scenePositionY,
+                scenePositionY + sceneHeight - this.rectangle.getHeight()));
+    }
 }
-// ToDo Set to random position
+
+
 
