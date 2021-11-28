@@ -1,5 +1,4 @@
 package trinat.hexenspiel.hexenspiel;
-
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
@@ -32,7 +31,13 @@ public class Pumpkin extends GameFigures {
         this.rectangle.setArcHeight(ArcHeight);
         this.rectangle.setFill(Color.BLUE);
     }
-    //ToDO create method setToRandomPosition
+    public void setToRandomYPosition(double sceneWidth,
+                                     double scenePositionY,
+                                     double sceneHeight){
+        this.rectangle.setY(RandomNumberGenerator.random(scenePositionY,
+                                                    scenePositionY + sceneHeight - this.rectangle.getHeight()));
+    }
+
 
 
 

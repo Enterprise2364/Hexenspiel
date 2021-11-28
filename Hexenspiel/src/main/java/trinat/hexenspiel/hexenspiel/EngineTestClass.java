@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 public class EngineTestClass extends Application {
@@ -57,13 +58,25 @@ public class EngineTestClass extends Application {
         witchDashStage.show();
         WitchDashEngine testEngine = new WitchDashEngine(witchDashStage, 4,8,1);
         root.getChildren().add(testEngine.getWitch().getRectangle());
-
+        Pumpkin pumpkin =new Pumpkin(sceneWidth,sceneY,sceneHeight);
+        root.getChildren().add(pumpkin.getRectangle());
         for (int i=0;i<testEngine.getPumpkins().size();i++){
             root.getChildren().add(testEngine.getPumpkins().get(i).getRectangle());
             testEngine.getPumpkins().get(i).setSpeed(2);
             testEngine.getPumpkins().get(i).getRectangle().setFill(Color.BLUE);
             testEngine.getPumpkins().get(i).getRectangle().setVisible(true);
         }
+        boolean test =false;
+        ArrayList<Integer> gg= new ArrayList<>();
+        gg.add(56);
+        gg.add(5);
+        gg.add(35);
+        test=gg.stream().anyMatch(integer -> integer<3);
+        test=gg.stream().anyMatch(integer -> integer<6);
+        test = testEngine.testIfSameYPosition(testEngine.getPumpkins(),pumpkin );
+        pumpkin.getRectangle().setY(testEngine.getPumpkins().get(0).getRectangle().getY());
+        test = testEngine.testIfSameYPosition(testEngine.getPumpkins(),pumpkin);
+
         loop = new Timeline(new KeyFrame(Duration.millis(10), arg -> {
 
             // Pumpkin Movement
