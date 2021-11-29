@@ -39,30 +39,27 @@ public class WitchDashMain extends Application {
         int sceneHeight=400;
         int witchSpeed=10;
         int pumpkinSpeed=1;
-        Witch witch= new Witch(2,4,40,40, 2,2);
-        Pumpkin pumpkin =new Pumpkin(sceneWidth,
-                                        sceneY,
-                                        sceneHeight);
-
-        witch.setSpeed(witchSpeed);
-        pumpkin.setSpeed(pumpkinSpeed);
-
-        Group root = new Group(witch.getRectangle(),
-                                pumpkin.getRectangle());
-
+        Group root = new Group();
         Scene witchDashScene = new Scene(root,
-                                            sceneWidth,
-                                            sceneHeight);
-
+                sceneWidth,
+                sceneHeight);
         witchDashMainStage.setScene(witchDashScene);
         witchDashMainStage.show();
+        WitchDashEngine witchDashEngine = new WitchDashEngine(witchDashMainStage, 4);
+        root.getChildren().add(witchDashEngine.getWitch().getRectangle());
+
+        for (int i=0;i<witchDashEngine.getPumpkins().size();i++){
+            root.getChildren().add(witchDashEngine.getPumpkins().get(i).getRectangle());
+            witchDashEngine.getPumpkins().get(i).getRectangle().setVisible(true);
+        }
+
 
         //Looping pumpkin movement to the left
         loop= new Timeline(new KeyFrame(
                 Duration.millis(durationPerFrameRate),
                 arg -> {
                     // Pumpkin Movement
-                    pumpkin.moveLeft();
+                    witchDashEngine.movePumpkins();
 
                     //Witch Control
                     witchDashScene.setOnKeyPressed(e -> {
@@ -74,56 +71,56 @@ public class WitchDashMain extends Application {
 
                         if (e.getCode().equals(KeyCode.W) || e.getCode().equals(KeyCode.Z)) {
 
-                            if (witch.getRectangle().getY() <=witchDashScene.getY()){
+                            if (witchDashEngine.getWitch().getRectangle().getY() <=witchDashScene.getY()){
 
-                                witch.moveUp();
+                                witchDashEngine.getWitch().moveUp();
                             }
                             else{
 
-                                witch.moveDown();
+                                witchDashEngine.getWitch().moveDown();
                             }
 
                         }
                         else if (e.getCode().equals(KeyCode.S)) {
 
-                            if (witch.getRectangle().getY()>= witchDashScene.getHeight()-witch.getRectangle().getHeight()){
+                            if (witchDashEngine.getWitch().getRectangle().getY()>= witchDashScene.getHeight()-witchDashEngine.getWitch().getRectangle().getHeight()){
 
-                                witch.moveDown();
+                                witchDashEngine.getWitch().moveDown();
                             }
                             else{
 
-                                witch.moveUp();
+                                witchDashEngine.getWitch().moveUp();
                             }
 
                         }
                         else if (e.getCode().equals(KeyCode.D)) {
 
-                            if (witch.getRectangle().getX() >=witchDashScene.getWidth()-witch.getRectangle().getWidth()){
+                            if (witchDashEngine.getWitch().getRectangle().getX() >=witchDashScene.getWidth()-witchDashEngine.getWitch().getRectangle().getWidth()){
 
-                                witch.moveLeft();
+                                witchDashEngine.getWitch().moveLeft();
                             }
                             else{
 
-                                witch.moveRight();
+                                witchDashEngine.getWitch().moveRight();
                             }
 
                         }
                         else if (e.getCode().equals(KeyCode.Q) || e.getCode().equals(KeyCode.A)) {
 
-                            if (witch.getRectangle().getX() <=witchDashScene.getX()){
+                            if (witchDashEngine.getWitch().getRectangle().getX() <=witchDashScene.getX()){
 
-                                witch.moveRight();
+                                witchDashEngine.getWitch().moveRight();
                             }
                             else{
 
-                                witch.moveLeft();
+                                witchDashEngine.getWitch().moveLeft();
                             }
 
                         }
                     });
 
                     // Collision between Witch and Pumpkin
-                    if (witch.testCollision(pumpkin.getRectangle())) {
+                    if (witchDashEngine.testCollision()) {
                         loop.stop();
                         try {
                             gameOverStage();

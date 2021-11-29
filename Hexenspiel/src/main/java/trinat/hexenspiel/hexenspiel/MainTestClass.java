@@ -6,6 +6,8 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
+import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.scene.Group;
@@ -49,11 +51,25 @@ public class MainTestClass extends Application {
         int sceneWidth=800;
         int sceneHeight=400;
         Witch witch = new Witch();
+
         Pumpkin pumpkin =new Pumpkin(sceneWidth,sceneY,sceneHeight);
+        witch.setSpeed(8);
+        pumpkin.setSpeed(1);
         Group root = new Group(witch.getRectangle());
         Rectangle rectangle1 = new Rectangle(200, 20, 20, 20);
-        root.getChildren().addAll(rectangle1,pumpkin.getRectangle());
+
         Scene witchDashScene = new Scene(root, sceneWidth, sceneHeight);
+
+        WitchDashEngine testEngine= new WitchDashEngine(witchDashStage,5);
+        root.getChildren().addAll(rectangle1,pumpkin.getRectangle(),testEngine.getPumpkins().get(2).getRectangle());
+        /*for (int i=0;i<testEngine.getPumpkins().size();i++){
+            root.getChildren().add(testEngine.getPumpkins().get(i).getRectangle());
+            testEngine.getPumpkins().get(i).setSpeed(1);
+            testEngine.getPumpkins().get(i).getRectangle().setFill(Color.AZURE);
+        }*/
+        testEngine.getPumpkins().get(2).setSpeed(1);
+        testEngine.getPumpkins().get(2).getRectangle().setFill(Color.AZURE);
+
         witchDashStage.setScene(witchDashScene);
         //timeline.play();
         /*while ((pumpkin.getRectangle().getX() >= 0)) {
@@ -69,30 +85,15 @@ public class MainTestClass extends Application {
         pumpkin.getRectangle().setY(witch.getRectangle().getY());
         pumpkin.getRectangle().setX(witchDashScene.getWidth()+pumpkin.getRectangle().getWidth());
 
-        /*witch.testCollision(pumpkin.getRectangle())
-            Timeline timeline = new Timeline(
-                    new KeyFrame(Duration.ZERO,
-                            new KeyValue(
-                                    rectangle1.translateXProperty(),
-                                    pumpkin.getRectangle().getX())),
-                    new KeyFrame(Duration.seconds(1),
-                            new KeyValue(pumpkin.getRectangle().translateXProperty(),
-                                    pumpkin.getRectangle().getX()-100))
-            );
-            pumpkin.getRectangle().setX(pumpkin.getRectangle().getX()-100);
-            timeline.play();
-            stage.show();
-            timeline.stop();
 
-        }
-            //pumpkin.getRectangle().setX(pumpkin.getRectangle().getX()-10;
-        //}*/
 
-        loop= new Timeline(new KeyFrame(Duration.millis(1000),new EventHandler<ActionEvent>() {
+        loop= new Timeline(new KeyFrame(Duration.millis(10),new EventHandler<ActionEvent>() {
             public void handle(ActionEvent arg) {
 
                     // Pumpkin Movement
-                    pumpkin.moveFigure(-1,0);
+                //testEngine.movePumpkins();
+                testEngine.getPumpkins().get(2).moveLeft();
+                pumpkin.moveLeft();
 
 
                     // collision bas
