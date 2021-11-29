@@ -37,7 +37,7 @@ public class WitchDashEngineTest {
         Pumpkin testPumpkin1=new Pumpkin(800,
                 0,
                 400);
-        testPumpkin1.getRectangle().setY(40);
+        testPumpkin1.getRectangle().setY(50);
         assertEquals(true, testEngine.testIfSameYPosition(testEngine.getPumpkins(),testPumpkin1));
 
     }
