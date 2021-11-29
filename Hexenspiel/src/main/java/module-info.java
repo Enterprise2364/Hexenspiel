@@ -1,9 +1,8 @@
-module com.example.witchdash2 {
+module trinat.hexenspiel.hexenspiel {
     requires javafx.controls;
     requires javafx.fxml;
-    requires javafx.graphics;
 
 
-    opens witchdash to javafx.fxml;
-    exports witchdash;
+    opens trinat.hexenspiel.hexenspiel to javafx.fxml;
+    exports trinat.hexenspiel.hexenspiel;
 }

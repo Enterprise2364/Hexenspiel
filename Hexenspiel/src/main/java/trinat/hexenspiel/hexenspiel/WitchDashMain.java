@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class WitchDashMain extends Application {
     private static Timeline loop;
@@ -42,17 +43,15 @@ public class WitchDashMain extends Application {
         int sceneWidth=800;
         int sceneHeight=400;
         int witchSpeed=10;
-        int pumpkinSpeed=1;
+
+        Difficulty diff = new Difficulty();
+        ArrayList<Pumpkin> pumpkinlist = new ArrayList<>();
+
         Witch witch= new Witch();
-        Pumpkin pumpkin =new Pumpkin(sceneWidth,
-                                        sceneY,
-                                        sceneHeight);
 
         witch.setSpeed(witchSpeed);
-        pumpkin.setSpeed(pumpkinSpeed);
 
-        Group root = new Group(witch.getRectangle(),
-                                pumpkin.getRectangle());
+        Group root = new Group(witch.getRectangle());
 
         Scene witchDashScene = new Scene(root,
                                             sceneWidth,
@@ -66,7 +65,18 @@ public class WitchDashMain extends Application {
                 Duration.millis(durationPerFrameRate),
                 arg -> {
                     // Pumpkin Movement
-                    pumpkin.moveLeft();
+
+                    //Create multiple Pumpkin
+                    if(pumpkinlist.size() != diff.spawnFrequency) {
+                        for(int i=0; i<diff.spawnFrequency; i++) {
+                            pumpkinlist.add(new Pumpkin(sceneWidth, sceneY, sceneHeight));
+                            pumpkinlist.get(i).setSpeed(diff.speed);
+                        }
+                    }
+                    //Move obstacle to the left side
+                    for(int i=0; i<pumpkinlist.size(); i++) {
+                        pumpkinlist.get(i).moveLeft();
+                    }
 
                     //Witch Control
                     witchDashScene.setOnKeyPressed(e -> {
@@ -127,15 +137,16 @@ public class WitchDashMain extends Application {
                     });
 
                     // Collision between Witch and Pumpkin
-                    if (witch.testCollision(pumpkin.getRectangle())) {
-                        loop.stop();
-                        try {
-                            gameOverStage();
-                        } catch (IOException e) {
-                            e.printStackTrace();
+                    for(int i=0; i<diff.spawnFrequency; i++) {
+                        if (witch.testCollision(pumpkinlist.get(i).getRectangle())) {
+                            loop.stop();
+                            try {
+                                gameOverStage();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                         }
                     }
-
 
 
 
