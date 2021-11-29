@@ -94,6 +94,7 @@ public class MainTestClass extends Application {
                     // Pumpkin Movement
                     pumpkin.moveFigure(-1,0);
 
+
                     // collision bas
                     if (witch.testCollision(pumpkin.getRectangle())) {
                         loop.stop();
