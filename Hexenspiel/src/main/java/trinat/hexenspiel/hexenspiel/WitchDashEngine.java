@@ -40,7 +40,16 @@ public class WitchDashEngine {
     }
 
     public void movePumpkins(){
-        pumpkins.forEach(Pumpkin::moveLeft);
+        pumpkins.get(0).moveLeft();
+        for(int i=1;i<pumpkins.size();i++){
+            if (pumpkins.get((i-1)).getRectangle().getX() <= witchDashMainEngineStage.getWidth()-pumpkins.get(i-1).getRectangle().getWidth()){
+                pumpkins.get(i).moveLeft();
+            }
+
+        }
+
+
+       /* pumpkins.forEach(Pumpkin::moveLeft);*/
     }
 
 

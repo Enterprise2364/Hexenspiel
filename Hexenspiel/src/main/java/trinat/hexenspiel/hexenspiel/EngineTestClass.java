@@ -62,7 +62,7 @@ public class EngineTestClass extends Application {
         root.getChildren().add(pumpkin.getRectangle());
         for (int i=0;i<testEngine.getPumpkins().size();i++){
             root.getChildren().add(testEngine.getPumpkins().get(i).getRectangle());
-            testEngine.getPumpkins().get(i).setSpeed(2);
+            testEngine.getPumpkins().get(i).setSpeed(1);
             testEngine.getPumpkins().get(i).getRectangle().setFill(Color.BLUE);
             testEngine.getPumpkins().get(i).getRectangle().setVisible(true);
         }
@@ -77,7 +77,7 @@ public class EngineTestClass extends Application {
         pumpkin.getRectangle().setY(testEngine.getPumpkins().get(0).getRectangle().getY());
         test = testEngine.testIfSameYPosition(testEngine.getPumpkins(),pumpkin);
 
-        loop = new Timeline(new KeyFrame(Duration.millis(10), arg -> {
+        loop = new Timeline(new KeyFrame(Duration.millis(20), arg -> {
 
             // Pumpkin Movement
             testEngine.movePumpkins();
