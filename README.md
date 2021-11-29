@@ -50,11 +50,13 @@ Once the game has started, you can move your witch character up and down using t
 |----|----|----|----|----|
 | 1 | As a user I control the upwards and downwards movement of the witch character with the keyboard. | The program should recognise keyboard inputs and move the character accordingly. | high | 5 |
 | 2 | As a user, I expect that the obstacles fly towards the witch character at alternating heights. | With the help of a random function, the objects appear at different heights. | high | 5 |
-| 3 | As a user, I would like to have a main menu so that I can start the game. | A main menu with start and exit button shall be available to the player. | high | 10 |
-| 4 | As a user, I would like to be shown as soon as I have won the game. | If the player wins, a new window shall open. | medium | 10 |
-| 5 | As a user, I would like to be able to choose between different levels of game difficulty. | The level of difficulty can be selected in the main menu before beginning a game. More objects appear at higher levels. | medium | 10 |
-| 6 | As a user I would like to be able to win. | A functioning game should be programmed that is not impossible to play. | high | 10 |
-| 7 | As a programmer, I want to be able to easily understand the programme so that I can rebuild it, maintain it and add new features. | Comments, logical structure. | high | 5 |
+| 3 | As a user, I want there to be a main menu in which to choose settings and start the game. | A main menu with start and exit button shall be available to the player. | high | 10 |
+| 4 | As a user, I would like to be informed immediately if I have won the game. | If the player wins, a new window shall open. | medium | 10 |
+| 5 | As a user, I would like to be able to set the different difficulty levels for the game in the main menu, to keep it interesting. | The level of difficulty can be selected in the main menu before beginning a game. More objects appear at higher levels. | medium | 10 |
+| 6 | As a user playing the game, I would like to have multiple lives for my character, so that the game is not over too soon.  | Each collision with the obstacle subtract the player one lives. | high | 10 |
+| 7 | As a user, i want to be able to destroy pumpkin objects with a projectile. | If the Player press a key, the Witch shoot a projectile whereby the obstacle can be destroyed. | medium | 10 |
+| 8 | As a programmer, I would like the game to be managed by a game engine. |  | high | 15 |
+| 9 | As a programmer, I want to be able to easily understand the programme so that I can rebuild it, maintain it and add new features. | Comments, logical structure. | high | 5 |
 
 # Releaseplan
 
@@ -63,7 +65,22 @@ Once the game has started, you can move your witch character up and down using t
 |1| Basic requirements | | |
 |2| Basic requirements | | |
 |3| | Release 1 | |
-|4| | Release 1 | |
-|5| | | Release 2 |
-|6|  Basic requirements | | |
-|7|  Basic requirements | | |
+|4| | | Release 2 |
+|5| | Release 1 | |
+|6| | Release 1 | |
+|7| | | Release 2 |
+|8| | Release 1 | |
+|9| | | Release 2 |
+
+
+# Dokumentation Sprint 1
+
+| Tasknummer | Tasks | Userstory | Geschätzter Aufwand |
+|----|----|----|----|
+| 1 | 
+
+## Dokumentation wichtiger Code Snippets
+
+
+
+
