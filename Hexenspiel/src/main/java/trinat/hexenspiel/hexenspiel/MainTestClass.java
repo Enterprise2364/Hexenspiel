@@ -95,6 +95,7 @@ public class MainTestClass extends Application {
                 testEngine.getPumpkins().get(2).moveLeft();
                 pumpkin.moveLeft();
 
+
                     // collision bas
                     if (witch.testCollision(pumpkin.getRectangle())) {
                         loop.stop();
