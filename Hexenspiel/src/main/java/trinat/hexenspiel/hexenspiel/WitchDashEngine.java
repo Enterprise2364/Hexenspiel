@@ -39,19 +39,26 @@ public class WitchDashEngine {
         }
     }
 
-    public void movePumpkins(){
+    public void movePumpkins(int interval){
         pumpkins.get(0).moveLeft();
         for(int i=1;i<pumpkins.size();i++){
-            if (pumpkins.get((i-1)).getRectangle().getX() <= witchDashMainEngineStage.getWidth()-pumpkins.get(i-1).getRectangle().getWidth()){
+            if (pumpkins.get((i-1)).getRectangle().getX() <= (this.witchDashMainEngineStage.getWidth()-pumpkins.get(i-1).getRectangle().getWidth())- interval){
                 pumpkins.get(i).moveLeft();
             }
-
         }
-
-
+reappearance();
        /* pumpkins.forEach(Pumpkin::moveLeft);*/
     }
 
+    public void reappearance() {
+        for (int i = 0; i < pumpkins.size(); i++) {
+            if (pumpkins.get(i).getRectangle().getX() < (this.witchDashMainEngineStage.getMinWidth() - 100 )){
+                pumpkins.get(i).getRectangle().setX(witchDashMainEngineStage.getWidth());
+                pumpkins.get(i).getRectangle().setY(RandomNumberGenerator.random(witchDashMainEngineStage.getY(), witchDashMainEngineStage.getY() + witchDashMainEngineStage.getHeight()- this.pumpkins.get(i).getRectangle().getHeight()));
+            }
+
+        }
+    }
 
 
     public void moveFigures(){

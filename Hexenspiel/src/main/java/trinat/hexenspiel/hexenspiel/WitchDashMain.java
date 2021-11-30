@@ -59,7 +59,7 @@ public class WitchDashMain extends Application {
                 Duration.millis(durationPerFrameRate),
                 arg -> {
                     // Pumpkin Movement
-                    witchDashEngine.movePumpkins();
+                    witchDashEngine.movePumpkins(20);
 
                     //Witch Control
                     witchDashScene.setOnKeyPressed(e -> {

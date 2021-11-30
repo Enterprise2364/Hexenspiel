@@ -80,7 +80,8 @@ public class EngineTestClass extends Application {
         loop = new Timeline(new KeyFrame(Duration.millis(20), arg -> {
 
             // Pumpkin Movement
-            testEngine.movePumpkins();
+            testEngine.movePumpkins(20);
+
 
             //Test collision
             if (testEngine.testCollision()) {
