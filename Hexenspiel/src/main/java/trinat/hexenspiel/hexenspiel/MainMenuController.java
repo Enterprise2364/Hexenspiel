@@ -19,13 +19,15 @@ public class MainMenuController {
         private Label welcomeText;
 
         @FXML
-        public void newGame(Stage stage) {
-            MainTestClass.witchDashStage = stage;
-            MainTestClass.witchDashMainScene();
+        public void newGame() {
+            WitchDashMain.launch();
         }
 
         @FXML
         public void quit() {
+            WitchDashMain.mainMenuStage.close();
+            WitchDashMain.witchDashMainStage.close();
             System.exit(0);
-        }
+    }
+
 }

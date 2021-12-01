@@ -22,8 +22,7 @@ public class WitchDashMain extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        witchDashMainStage = stage;
-        witchDashMainScene();
+        programmeStart();
     }
 
     public static void witchDashMainScene(){
@@ -144,8 +143,8 @@ public class WitchDashMain extends Application {
     }
 
 
-    public static void main(String[] args) {
-        launch();
+    public static void main(String[] args) throws IOException {
+        programmeStart();
     }
 
     public static void gameOverStage() throws IOException {
@@ -155,5 +154,13 @@ public class WitchDashMain extends Application {
         gameOverStage.setTitle("Game over");
         gameOverStage.setScene(gameOverScene);
         gameOverStage.show();
+    }
+    public static void programmeStart() throws IOException {
+        Stage mainMenuStage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainTestClass.class.getResource("MainMenu.fxml"));
+        Scene mainMenuScene = new Scene(fxmlLoader.load(), 600, 600);
+        mainMenuStage.setTitle("Main menu");
+        mainMenuStage.setScene(mainMenuScene);
+        mainMenuStage.show();
     }
 }
