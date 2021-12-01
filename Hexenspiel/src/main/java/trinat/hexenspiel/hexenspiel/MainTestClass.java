@@ -62,11 +62,11 @@ public class MainTestClass extends Application {
 
         WitchDashEngine testEngine= new WitchDashEngine(witchDashStage,5);
         root.getChildren().addAll(rectangle1,pumpkin.getRectangle(),testEngine.getPumpkins().get(2).getRectangle());
-        /*for (int i=0;i<testEngine.getPumpkins().size();i++){
+        for (int i=0;i<testEngine.getPumpkins().size();i++){
             root.getChildren().add(testEngine.getPumpkins().get(i).getRectangle());
             testEngine.getPumpkins().get(i).setSpeed(1);
             testEngine.getPumpkins().get(i).getRectangle().setFill(Color.AZURE);
-        }*/
+        }
         testEngine.getPumpkins().get(2).setSpeed(1);
         testEngine.getPumpkins().get(2).getRectangle().setFill(Color.AZURE);
 
