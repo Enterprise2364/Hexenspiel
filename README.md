@@ -9,15 +9,15 @@
 
 # Table of contents
 
-1. [Introduction](#-Introduction)
-2. [Aims](#-Aims)
-3. [Context](#-Context)
-4. [Installation instructions](#-Installation-instructions)
-5. [Player controls](#-Player-controls)
-6. [User Stories](#-User-Stories)
-7. [Release plan](#-Release-plan)
-8. [Documentation Sprint 1](#-Documentation-Sprint-1)
-9. [Documentation Sprint 2](#-Documentation-Sprint-2)
+1. [Introduction](#-introduction)
+2. [Aims](#-aims)
+3. [Context](#-context)
+4. [Installation instructions](#-installation-instructions)
+5. [Player controls](#-player-controls)
+6. [User Stories](#-user-stories)
+7. [Release plan](#-release-plan)
+8. [Documentation Sprint 1](#-documentation-sprint-1)
+9. [Documentation Sprint 2](#-documentation-sprint-2)
 
 
 ---
