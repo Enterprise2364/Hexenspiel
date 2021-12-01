@@ -9,15 +9,16 @@
 
 # Table of contents
 
-<ol>
-<li>Introduction</li>
-<li>Aims</li>
-<li>Context</li>
-<li>Installation instructions</li>
-<li>Player controls</li>
-<li>User Stories</li>
-<li>Release plan</li>
-</ol>
+1. [Introduction](#-Introduction)
+2. [Aims](#-Aims)
+3. [Context](#-Context)
+4. [Installation instructions](#-Installation-instructions)
+5. [Player controls](#-Player-controls)
+6. [User Stories](#-User-Stories)
+7. [Release plan](#-Release-plan)
+8. [Documentation Sprint 1](#-Documentation-Sprint-1)
+9. [Documentation Sprint 2](#-Documentation-Sprint-2)
+
 
 ---
 # Introduction
@@ -48,7 +49,7 @@ Once the game has started, you can move your witch character up and down using t
 
 | US | Description | Acceptance criteria | Priority | Story Points |
 |----|----|----|----|----|
-| 1 | As a user I control the upwards and downwards movement of the witch character with the keyboard. | The program should recognise keyboard inputs and move the character accordingly. | high | 15 |
+| 1 | As a user I control the movements of the witch character with the keyboard. | The program should recognise keyboard inputs and move the character accordingly. | high | 15 |
 | 2 | As a user, I expect that the obstacles fly towards the witch character at alternating heights. | With the help of a random function, the objects appear at different heights. | high | 10 |
 | 3 | As a user, I want there to be a main menu in which to choose settings and start the game. | A main menu with start and exit button shall be available to the player. | medium | 10 |
 | 4 | As a user, I would like to be informed immediately if I have lost the game. | If the player hit the obstacle, a new window shall open. | high | 15 |
@@ -77,19 +78,39 @@ Once the game has started, you can move your witch character up and down using t
 
 # Documentation Sprint 1
 
-| Userstory | Tasks | Estimated effort |
+| Userstory | Description | Estimated effort |
 |----|----|----|
 | 1 | Control of the witch with the keyboard | 300 min |
 | 2 | Movement of the pumpkin | 210 min |
 | 4 | Making a Collision test & Pop-up Window | 300 min |
 
+### Tasklist
+
+| Userstory | Task | Description | 
+|----|----|----|
+| 0 | 1 | Creating a Stage for all objects |
+| 1 | 1 | Creating a class Witch |
+| 1 | 2 | Creating four method MoveUp, MoveDown, MoveRight & MoveLeft |
+| 1 | 3 | Creating a Loop for the Movements |
+| 2 | 1 | Creating a class Pumpkin |
+| 2 | 2 | Creating four method MoveUp, MoveDown, MoveRight & MoveLeft |
+| 2 | 3 | Add the Pumkin to the Loop |
+| 3 | 1 | Creating a class CollisionTest |
+| 3 | 2 | Compare the Position of the witch and the pumpkin |
+
+
 ## Documentation important Code Snippets
 
-1.)
+### 1.) Timeloop 
+
 ![image](https://user-images.githubusercontent.com/93000090/144055937-915a426b-9ce9-4800-a451-1ed17dbe2360.png)
 ![image](https://user-images.githubusercontent.com/93000090/144056004-106af7db-e1e4-4133-9641-0b52be266ed8.png)
 
-Description!
+
+
+With this code, it seems possible to move two objects at the same time.
+
+
 
 # Documentation Sprint 2
 
