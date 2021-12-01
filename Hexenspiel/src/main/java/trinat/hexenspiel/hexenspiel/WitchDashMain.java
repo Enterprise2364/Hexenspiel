@@ -144,7 +144,7 @@ public class WitchDashMain extends Application {
 
 
     public static void main(String[] args) throws IOException {
-        programmeStart();
+        launch();
     }
 
     public static void gameOverStage() throws IOException {
