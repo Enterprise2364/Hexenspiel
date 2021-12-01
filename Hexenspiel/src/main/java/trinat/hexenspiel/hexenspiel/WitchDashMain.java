@@ -48,11 +48,15 @@ public class WitchDashMain extends Application {
         ArrayList<Pumpkin> pumpkinlist = new ArrayList<>();
 
         Witch witch= new Witch();
-
         witch.setSpeed(witchSpeed);
 
         Group root = new Group(witch.getRectangle());
 
+        for(int i=0; i<diff.spawnFrequency; i++) {
+            pumpkinlist.add(new Pumpkin(sceneWidth, sceneY, sceneHeight));
+            root.getChildren().add(pumpkinlist.get(i).getRectangle());
+            pumpkinlist.get(i).setSpeed(diff.speed);
+        }
         Scene witchDashScene = new Scene(root,
                                             sceneWidth,
                                             sceneHeight);
@@ -60,32 +64,39 @@ public class WitchDashMain extends Application {
         witchDashMainStage.setScene(witchDashScene);
         witchDashMainStage.show();
 
-        //Looping pumpkin movement to the left
         loop= new Timeline(new KeyFrame(
                 Duration.millis(durationPerFrameRate),
                 arg -> {
-                    // Pumpkin Movement
 
                     //Create multiple Pumpkin
                     if(pumpkinlist.size() != diff.spawnFrequency) {
-                        for(int i=0; i<diff.spawnFrequency; i++) {
-                            pumpkinlist.add(new Pumpkin(sceneWidth, sceneY, sceneHeight));
-                            pumpkinlist.get(i).setSpeed(diff.speed);
-                        }
+
                     }
+
+
                     //Move obstacle to the left side
                     for(int i=0; i<pumpkinlist.size(); i++) {
                         pumpkinlist.get(i).moveLeft();
+                        if (pumpkinlist.get(i).getRectangle().getX() == 0) {
+                            //Set X-coordinate to 0
+                            pumpkinlist.get(i).getRectangle().setX(0);
+                            //Speed up the Pumpkin
+                            if(diff.moreSpeed == 3) {
+                                pumpkinlist.get(i).setSpeed(pumpkinlist.get(i).getSpeed()+1);
+                                diff.moreSpeed = 0;
+                            }
+                            else {
+                                diff.moreSpeed ++;
+                            }
+                        }
                     }
+
 
                     //Witch Control
                     witchDashScene.setOnKeyPressed(e -> {
                         if (e.getCode() == KeyCode.ESCAPE) {
-
                         witchDashMainStage.close();
-
                         }
-
                         if (e.getCode().equals(KeyCode.W) || e.getCode().equals(KeyCode.Z)) {
 
                             if (witch.getRectangle().getY() <=witchDashScene.getY()){

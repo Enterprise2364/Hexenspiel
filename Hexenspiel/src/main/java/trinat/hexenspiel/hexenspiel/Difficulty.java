@@ -10,6 +10,7 @@ public class Difficulty {
     public Button buttonHard;
     //different speed
     public int speed;
+    public int moreSpeed;
     public int niveau;
     //Multiple Obstacle
     public int spawnFrequency;
@@ -19,17 +20,20 @@ public class Difficulty {
         niveau = 1;
         speed = 1;
         spawnFrequency = 3;
+        moreSpeed = 0;
     }
 
     public void buttonMediumPressed(ActionEvent actionEvent) {
         niveau = 2;
         speed = 2;
         spawnFrequency = 5;
+        moreSpeed = 0;
     }
 
     public void buttonHardPressed(ActionEvent actionEvent) {
         niveau = 3;
         speed = 3;
         spawnFrequency = 7;
+        moreSpeed = 0;
     }
 }
