@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trinat.hexenspiel.hexenspiel.GameOverController">
+    <bottom>
+        <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <left>
+                <Button fx:id="new_game" mnemonicParsing="false" onAction="#newGame" text="New game" BorderPane.alignment="CENTER">
+                    <BorderPane.margin>
+                        <Insets left="50.0" />
+                    </BorderPane.margin>
+                </Button>
+            </left>
+            <right>
+                <Button fx:id="exit_game" mnemonicParsing="false" onAction="#exitProgramme" text="Quit" BorderPane.alignment="CENTER">
+                    <BorderPane.margin>
+                        <Insets right="50.0" />
+                    </BorderPane.margin>
+                </Button>
+            </right>
+        </BorderPane>
+    </bottom>
+    <center>
+        <Text fx:id="main_menu_text" fill="#0208fa" strokeType="OUTSIDE" strokeWidth="0.0" text="Main menu" textAlignment="CENTER" wrappingWidth="340.52013397216797" BorderPane.alignment="CENTER">
+            <font>
+                <Font name="Baskerville" size="60.0" />
+            </font>
+        </Text>
+    </center>
+</BorderPane>

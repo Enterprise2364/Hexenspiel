@@ -1,16 +1,16 @@
 package trinat.hexenspiel.hexenspiel;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import javafx.scene.Group;
-import javafx.animation.*;
 import javafx.util.Duration;
+
 import java.io.IOException;
 
 
@@ -21,23 +21,19 @@ public class MainTestClass extends Application {
     @Override
 
     public void start(Stage stage) throws IOException {
-        MainTestClass.witchDashStage = stage;
-        MainTestClass.witchDashMainScene();
-
+        MainTestClass.programmeStart();
     }
-    public static void witchDashMainScene()throws IOException{
+    public static void witchDashMainScene() {
 
-        //définition Squares parameter
+        /*definition Squares parameter
         int positionwX = 100;
         int positionwY = 100;
         int positionoX = 250;
         int positionoY = 250;
         int hit_boxWidth = 25;
         int hit_boxHeight = 25;
-
-        FXMLLoader fxmlLoader = new FXMLLoader(MainTestClass.
-                class.
-                getResource("witchDash-view.fxml"));
+        */
+        FXMLLoader fxmlLoader = new FXMLLoader(MainTestClass.class.getResource("witchDash-view.fxml"));
 
         //Scene witchDashScene = new Scene(fxmlLoader.load(), 800, 400);
 
@@ -88,22 +84,21 @@ public class MainTestClass extends Application {
             //pumpkin.getRectangle().setX(pumpkin.getRectangle().getX()-10;
         //}*/
 
-        loop= new Timeline(new KeyFrame(Duration.millis(1000),new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent arg) {
+        loop= new Timeline(new KeyFrame(Duration.millis(1000), arg -> {
 
-                    // Pumpkin Movement
-                    pumpkin.moveFigure(-1,0);
+                // Pumpkin Movement
+                pumpkin.moveFigure(-1,0);
 
-                    // collision bas
-                    if (witch.testCollision(pumpkin.getRectangle())) {
-                        loop.stop();
-                        try {
-                            gameOver();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                // collision bas
+                if (witch.testCollision(pumpkin.getRectangle())) {
+                    loop.stop();
+                    try {
+                        gameOver();
+                    } catch (IOException e) {
+                        e.printStackTrace();
                     }
-                }}));
+                }
+            }));
         loop.setCycleCount(Timeline.INDEFINITE);
         loop.play();
         witchDashStage.show();
@@ -162,8 +157,16 @@ public class MainTestClass extends Application {
         gameOverStage.show();
     }
 
-        public static void main(String[] args) {
+    public static void programmeStart() throws IOException {
+        Stage mainMenuStage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(MainTestClass.class.getResource("MainMenu.fxml"));
+        Scene mainMenuScene = new Scene(fxmlLoader.load(), 600, 600);
+        mainMenuStage.setTitle("Main menu");
+        mainMenuStage.setScene(mainMenuScene);
+        mainMenuStage.show();
+    }
 
-        launch();
+        public static void main(String[] args) throws IOException {
+        programmeStart();
     }
 }
