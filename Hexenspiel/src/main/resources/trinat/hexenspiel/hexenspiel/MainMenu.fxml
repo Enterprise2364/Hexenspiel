@@ -17,7 +17,7 @@
                 </Button>
             </left>
             <right>
-                <Button fx:id="exit_game" mnemonicParsing="false" onAction="#quit" text="Quit" BorderPane.alignment="CENTER">
+                <Button fx:id="quit" mnemonicParsing="false" onAction="#quit" text="Quit" BorderPane.alignment="CENTER">
                     <BorderPane.margin>
                         <Insets right="50.0" />
                     </BorderPane.margin>
