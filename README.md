@@ -15,9 +15,10 @@
 4. [Installation instructions](#installation-instructions)
 5. [Player controls](#player-controls)
 6. [User Stories](#user-stories)
-7. [Release plan](#release-plan)
+7. [Releaseplan](#releaseplan)
 8. [Documentation Sprint 1](#documentation-sprint-1)
 9. [Documentation Sprint 2](#documentation-sprint-2)
+10. [Conclusion](#conclusion)
 
 
 ---
@@ -57,7 +58,7 @@ Once the game has started, you can move your witch character up and down using t
 | 6 | As a user playing the game, I would like to have multiple lives for my character, so that the game is not over too soon.  | Each collision with the obstacle subtract the player one lives. | high | 10 |
 | 7 | As a user, I want to know, if I won the game | If the player wins the game, a new window shall open | medium | 10 |
 | 8 | As a user, i want to be able to destroy pumpkin objects with a projectile. | If the Player press a key, the Witch shoot a projectile whereby the obstacle can be destroyed. | medium | 10 |
-| 9 | As a programmer, I would like the game to be managed by a game engine. |  | high | 15 |
+| 9 | As a programmer, I would like the game to be managed by a game engine. | A game engine managed the Main class. This avoid "Spaghetti code" in the project.| high | 15 |
 | 10 | As a programmer, I want to be able to easily understand the programme so that I can rebuild it, maintain it and add new features. | Comments, logical structure. | high | 5 |
 
 # Releaseplan
@@ -124,4 +125,5 @@ With this code, it seems possible to move two objects at the same time.
 ## Documentation important Code Snippets
 
 
+# Conclusion
 
