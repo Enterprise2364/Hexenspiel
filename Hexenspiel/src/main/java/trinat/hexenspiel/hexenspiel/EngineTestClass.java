@@ -52,10 +52,14 @@ public class EngineTestClass extends Application {
         int sceneY = 0;
         int sceneWidth = 800;
         int sceneHeight = 400;
+        int scenePositionY =0;
         Group root = new Group();
         Scene witchDashScene = new Scene(root, sceneWidth, sceneHeight);
         witchDashStage.setScene(witchDashScene);
         witchDashStage.show();
+        witchDashStage.setWidth(sceneWidth);
+        witchDashStage.setHeight(sceneHeight);
+        witchDashStage.setY(sceneY);
         WitchDashEngine testEngine = new WitchDashEngine(witchDashStage, 4);
         root.getChildren().add(testEngine.getWitch().getRectangle());
         Pumpkin pumpkin =new Pumpkin(sceneWidth,sceneY,sceneHeight);

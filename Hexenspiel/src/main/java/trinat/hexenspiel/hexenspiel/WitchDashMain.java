@@ -40,11 +40,15 @@ public class WitchDashMain extends Application {
         int witchSpeed=10;
         int pumpkinSpeed=1;
         Group root = new Group();
+
         Scene witchDashScene = new Scene(root,
                 sceneWidth,
                 sceneHeight);
         witchDashMainStage.setScene(witchDashScene);
         witchDashMainStage.show();
+        //witchDashMainStage.setWidth(witchDashScene.getWidth());
+        //witchDashMainStage.setHeight(witchDashScene.getWidth());
+        //witchDashMainStage.setY(sceneY);
         WitchDashEngine witchDashEngine = new WitchDashEngine(witchDashMainStage, 4);
         root.getChildren().add(witchDashEngine.getWitch().getRectangle());
 
