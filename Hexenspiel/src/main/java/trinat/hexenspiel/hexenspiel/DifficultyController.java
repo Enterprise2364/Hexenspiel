@@ -19,20 +19,20 @@ public class DifficultyController {
         niveau = 1;
         speed = 1;
         obstacleNumber = 10;
-        MainTestClass.callWitchDashMain(obstacleNumber,speed);
+        WitchDashMain.callWitchDashMain(obstacleNumber,speed);
     }
 
     public void handleMediumButtonAction(ActionEvent actionEvent) {
         niveau = 2;
         speed = 2;
         obstacleNumber = 15;
-        MainTestClass.callWitchDashMain(obstacleNumber,speed);
+        WitchDashMain.callWitchDashMain(obstacleNumber,speed);
     }
 
     public void handleHardButtonAction(ActionEvent actionEvent) {
         niveau = 3;
         speed = 3;
         obstacleNumber = 20;
-        MainTestClass.callWitchDashMain(obstacleNumber,speed);
+        WitchDashMain.callWitchDashMain(obstacleNumber,speed);
     }
 }

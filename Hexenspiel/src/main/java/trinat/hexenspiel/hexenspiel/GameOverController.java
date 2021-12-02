@@ -24,12 +24,13 @@ public class GameOverController {
         @FXML
         public void handleQuitButtonAction(ActionEvent event) {
             WitchDashMain.gameOverStage.close();
-            WitchDashMain.witchDashMainStage.close();
+            WitchDashMain.mainStage.close();
         }
 
         @FXML
         public void handleRestartButtonAction(ActionEvent actionEvent) throws IOException {
             handleQuitButtonAction(actionEvent);
-            WitchDashMain.witchDashMainScene();
+            WitchDashMain.mainStage.close();
+            WitchDashMain.callDifficultyStage();
         }
 }

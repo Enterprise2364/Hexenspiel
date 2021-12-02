@@ -16,7 +16,7 @@ public class MainMenuController {
 
     @FXML
     public void handleStartButtonAction(ActionEvent actionEvent) throws IOException{
-        MainTestClass.callDifficultyStage();
+        WitchDashMain.callDifficultyStage();
     }
 
         @FXML
