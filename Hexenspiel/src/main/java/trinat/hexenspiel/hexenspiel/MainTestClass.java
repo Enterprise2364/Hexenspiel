@@ -141,6 +141,7 @@ public class MainTestClass extends Application {
                         }
                         else{
                             witchDashEngine.getWitch().getLife().addHitPoint();
+
                             //Searches for Collisions and if detected then set the object to a random position
                             for (Pumpkin pumpkin1 : witchDashEngine.getPumpkins().stream().filter(pumpkin -> pumpkin.testCollision(witchDashEngine.getWitch().getRectangle())).collect(Collectors.toList())) {
                                 pumpkin1.getRectangle().setX(sceneWidth);
