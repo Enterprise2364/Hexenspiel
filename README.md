@@ -27,13 +27,18 @@ This Git Repository corresponds to a groupwork project for the course Software E
 
 Starting on the project just before Halloween, we decided to produce a game, which we called *Witch Dash*. The aim of the game is to avoid pumpkins which fly towards the witch character, controlled by the player using the keyboard. If the witch collides with three pumpkins, the game is over. We implementated the game using java and java FX.
 
+---
+
 # Aims
-The aim of the project was to apply what we have learned in our software engineering and programming II classes, using java, java FX, Git, and Jira. We wanted the end product to be a simple game, which would be fun to play.
+The aim of the project was to apply what we have learned in our software engineering and programming II classes, using Java, Java FX, Git, and Jira. We wanted the end product to be a simple game, which would be fun to play.
+
+---
 
 # Context
 
-We had three weeks for the project. Playing the game should be easy and fun, and it should have an attractive design. All team members should work equally on the project. 
+The project should be programmed in Java respectively in JavaFx. Playing the game should be easy and fun, and it should have an attractive design. All team members should work equally on the project. The programm should have a JUnit-test for testing the Programm and a Maven package for player without maven installed.
 
+---
 
 # Installation instructions
   1. Download all files from this github repository.
@@ -42,9 +47,13 @@ We had three weeks for the project. Playing the game should be easy and fun, and
   4. Open your computer's console or terminal
   5. There, enter java -jar followed by the copied path (.jar).
 
+---
+
 # Player controls
 
 Once the game has started, you can move your witch character up and down using the W and S keys on your keyboard. Pumpkins will come from the right, move to stay out of their way. If you loose all of your lives, you'll have to start again.
+
+---
 
 # User Stories
 
@@ -61,6 +70,8 @@ Once the game has started, you can move your witch character up and down using t
 | 9 | As a programmer, I would like the game to be managed by a game engine. | A game engine managed the Main class. This avoid "Spaghetti code" in the project.| high | 15 |
 | 10 | As a programmer, I want to be able to easily understand the programme so that I can rebuild it, maintain it and add new features. | Comments, logical structure. | high | 5 |
 
+---
+
 # Releaseplan
 
 | US | Release 1 | Release 2 | Release 3 |
@@ -76,6 +87,7 @@ Once the game has started, you can move your witch character up and down using t
 |9| | Release 2 | |
 |10| | | Release 3 |
 
+---
 
 # Documentation Sprint 1
 
@@ -89,15 +101,16 @@ Once the game has started, you can move your witch character up and down using t
 
 | Userstory | Task | Description | 
 |----|----|----|
-| 0 | 1 | Creating a Stage for all objects |
-| 1 | 1 | Creating a class Witch |
-| 1 | 2 | Creating four method MoveUp, MoveDown, MoveRight & MoveLeft |
-| 1 | 3 | Creating a Loop for the Movements |
-| 2 | 1 | Creating a class Pumpkin |
-| 2 | 2 | Creating four method MoveUp, MoveDown, MoveRight & MoveLeft |
-| 2 | 3 | Add the Pumkin to the Loop |
-| 3 | 1 | Creating a class CollisionTest |
-| 3 | 2 | Compare the Position of the witch and the pumpkin |
+| 0 | I | Creating a Stage for all objects |
+| 1 | I | Creating a class Witch |
+| 1 | II | Creating four method MoveUp, MoveDown, MoveRight & MoveLeft |
+| 1 | III | Creating a Loop for the Movements |
+| 2 | I | Creating a class Pumpkin |
+| 2 | II | Creating four method MoveUp, MoveDown, MoveRight & MoveLeft |
+| 2 | III | Add the Pumkin to the Loop |
+| 3 | I | Creating a class CollisionTest |
+| 3 | II | Compare the Position of the witch and the pumpkin |
+| 3 | III | Creating a Game Over Pop-up window |
 
 
 ## Documentation important Code Snippets
@@ -109,9 +122,18 @@ Once the game has started, you can move your witch character up and down using t
 
 
 
-With this code, it seems possible to move two objects at the same time.
+With this part of our code, it seems possible to move two objects at the same time. The programme runs through the timeline at an interval of a certain time, in our case 10 milliseconds. With the Timeline.indefinite command, the loop continues indefinitely until it is manually interrupted.
 
 
+### 2.) Collision Test
+
+![image](https://user-images.githubusercontent.com/93000090/144396278-0c28aaba-0b61-4e0a-882d-948f06af4066.png)
+
+
+
+To detect a collision between the Witch and the Pumpkin, this code snippet compares the positions of both objects. If a collision occurs, the loop is terminated and a Game Over window appears.
+
+---
 
 # Documentation Sprint 2
 
@@ -124,6 +146,20 @@ With this code, it seems possible to move two objects at the same time.
 
 ## Documentation important Code Snippets
 
+### 1.) Multiple life
+
+![image](https://user-images.githubusercontent.com/93000090/144405411-3234a1e8-f045-4bd9-ab4b-ed73a7e66f1d.png)
+
+
+After the basic framework of the programme is in place, the witch character should have several lives at his or her disposal. If the witch gets hit, the variable inthit_point gets +1. If it has reached the witch's life points, the game is over.  
+
+
+## Class diagramm
+
+![image](https://user-images.githubusercontent.com/93000090/144392812-973ebb6f-01e3-44bc-a21b-ffec6fc4eceb.png)
+
+
+---
 
 # Conclusion
 
