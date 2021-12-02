@@ -53,7 +53,7 @@ public class Boss {
     public Life TemporaryBosslife(Rectangle projectil,Life bosslife){
         CollisionTest collision = new CollisionTest(this.rectangle);
         if (collision.testCollision(projectil)){
-            this.bosslife.setHit_point(this.bosslife.getHit_point()+1);
+            this.bosslife.addHitPoint();
         }
         return bosslife;
     }

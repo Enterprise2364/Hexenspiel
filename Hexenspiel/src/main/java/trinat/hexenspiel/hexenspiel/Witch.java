@@ -4,11 +4,14 @@ import javafx.scene.paint.*;
 import javafx.scene.shape.*;
 
 
-public class Witch {
-    private Rectangle rectangle = new Rectangle();
-    private int witchSpeed=8;
+public class Witch extends GameFigures {
+    private Rectangle rectangle = super.getRectangle();
+    private int speed = 8;
+    private Life life=new Life();
+
 
     public Witch() {
+        super();
         this.rectangle.setX(10);
         this.rectangle.setY(10);
         this.rectangle.setHeight(25);
@@ -19,6 +22,7 @@ public class Witch {
     }
 
     public Witch(int positionX, int positionY, int Width, int Height, int ArcWidth, int ArcHeight){
+        super();
         this.rectangle.setX(positionX);
         this.rectangle.setY(positionY);
         this.rectangle.setWidth(Width);
@@ -28,9 +32,13 @@ public class Witch {
         this.rectangle.setFill(Color.BLUE);
     }
 
+    public Life getLife() {
+        return life;
+    }
 
-
-
+    public void setLife(Life life) {
+        this.life = life;
+    }
 
     /*public static Image Witch_image (Stage primaryStage){
         //calling an image
@@ -42,29 +50,5 @@ public class Witch {
         return witch;
     }*/
 
-    public void moveWitch(int changementX,int changementY){
-        this.rectangle.setX(this.rectangle.getX()+changementX*this.witchSpeed);
-        this.rectangle.setY(this.rectangle.getY()+changementY*this.witchSpeed);
-    }
-
-    public boolean testCollision(Rectangle rectangle){
-        CollisionTest collision = new CollisionTest(this.rectangle);
-        return collision.testCollision(rectangle);
-    }
-    public Rectangle getRectangle() {
-        return rectangle;
-    }
-
-    public void setRectangle(Rectangle rectangle) {
-        this.rectangle = rectangle;
-    }
-
-    public int getWitchSpeed() {
-        return witchSpeed;
-    }
-
-    public void setWitchSpeed(int witchSpeed) {
-        this.witchSpeed = witchSpeed;
-    }
 }
 

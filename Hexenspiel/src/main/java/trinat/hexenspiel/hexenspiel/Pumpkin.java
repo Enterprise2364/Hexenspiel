@@ -1,31 +1,38 @@
 package trinat.hexenspiel.hexenspiel;
-
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-public class Pumpkin {
-    private Rectangle rectangle = new Rectangle();
-    private int pumpkinSpeed =8;
+public class Pumpkin extends GameFigures {
+    private Rectangle rectangle = super.getRectangle();
+    private int speed = 8;
 
-    public Pumpkin() {
-        this.rectangle.setX(10);
-        this.rectangle.setY(10);
-        this.rectangle.setHeight(25);
-        this.rectangle.setWidth(25);
-        this.rectangle.setFill(Color.BLUE);
+    public Pumpkin(double sceneWidth,
+                   double scenePositionY,
+                   double sceneHeight) {
+        super();
+        this.rectangle.setHeight(20);
+        this.rectangle.setWidth(20);
+        this.rectangle.setFill(Color.ORANGE);
         this.rectangle.setArcWidth(2);
         this.rectangle.setArcHeight(2);
+        this.rectangle.setX(sceneWidth);
+        this.rectangle.setY(RandomNumberGenerator.random(scenePositionY,
+                                                        (scenePositionY + sceneHeight) - this.rectangle.getHeight()));
+
     }
 
-    public Pumpkin(int positionX, int positionY, int Width, int Height, int ArcWidth, int ArcHeight){
+    public Pumpkin(double sceneWidth, double scenePositionY, double sceneHeight,double positionX, double positionY, double Width, double Height, double ArcWidth, double ArcHeight) {
+        super();
         this.rectangle.setX(positionX);
-        this.rectangle.setY(positionY);
+        this.rectangle.setY(RandomNumberGenerator.random(scenePositionY, scenePositionY + sceneHeight - this.rectangle.getHeight()));
         this.rectangle.setWidth(Width);
         this.rectangle.setHeight(Height);
         this.rectangle.setArcWidth(ArcWidth);
         this.rectangle.setArcHeight(ArcHeight);
         this.rectangle.setFill(Color.BLUE);
     }
+
+
 
 
 
@@ -40,29 +47,4 @@ public class Pumpkin {
         //returning the image
         return witch;
     }*/
-
-    public void movePumpkin(int changementX,int changementY){
-        this.rectangle.setX(this.rectangle.getX()+changementX*this.pumpkinSpeed);
-        this.rectangle.setY(this.rectangle.getY()+changementY*this.pumpkinSpeed);
-    }
-
-    public boolean testCollision(Rectangle rectangle){
-        CollisionTest collision = new CollisionTest(this.rectangle);
-        return collision.testCollision(rectangle);
-    }
-    public Rectangle getRectangle() {
-        return rectangle;
-    }
-
-    public void setRectangle(Rectangle rectangle) {
-        this.rectangle = rectangle;
-    }
-
-    public int getPumpkinSpeed() {
-        return pumpkinSpeed;
-    }
-
-    public void setPumpkinSpeed(int witchSpeed) {
-        this.pumpkinSpeed = witchSpeed;
-    }
 }
