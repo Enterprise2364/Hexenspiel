@@ -16,7 +16,7 @@ public class WitchDashEngine {
             Pumpkin tempPumpkin= new Pumpkin(sceneWidth,
                                 scenePositionY,
                                 sceneHeight);
-            while (testIfSameYPosition(pumpkins,tempPumpkin)){
+            while (testIfSameYPosition(pumpkins,tempPumpkin)&&(pumpkins.size()<=5)){
 
                 tempPumpkin.setToRandomYPosition(sceneWidth,
                         scenePositionY,
@@ -35,7 +35,7 @@ public class WitchDashEngine {
             Pumpkin tempPumpkin= new Pumpkin(this.witchDashMainEngineStage.getScene().getWidth(),
                     this.witchDashMainEngineStage.getScene().getY()-this.witchDashMainEngineStage.getScene().getY(),
                     this.witchDashMainEngineStage.getScene().getHeight());
-            while (testIfSameYPosition(pumpkins,tempPumpkin)){
+            while (testIfSameYPosition(pumpkins,tempPumpkin)&&(pumpkins.size()<=10)){
 
                 tempPumpkin.setToRandomYPosition(this.witchDashMainEngineStage.getScene().getWidth(),
                                                 this.witchDashMainEngineStage.getScene().getY()-this.witchDashMainEngineStage.getScene().getY(),
