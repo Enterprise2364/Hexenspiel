@@ -10,14 +10,14 @@
     <bottom>
         <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <left>
-                <Button fx:id="retry" mnemonicParsing="false" onAction="#handleCloseButtonAction" text="ABANDONNED" BorderPane.alignment="CENTER">
+                <Button fx:id="retry" mnemonicParsing="false" onAction="#handleQuitButtonAction" text="ABANDONNED" BorderPane.alignment="CENTER">
                     <BorderPane.margin>
                         <Insets left="50.0" />
                     </BorderPane.margin>
                 </Button>
             </left>
             <right>
-                <Button fx:id="abandonned" mnemonicParsing="false" onAction="#restart" text="RETRY" BorderPane.alignment="CENTER">
+                <Button fx:id="quit" mnemonicParsing="false" onAction="#handleRestartButtonAction" text="RETRY" BorderPane.alignment="CENTER">
                     <BorderPane.margin>
                         <Insets right="50.0" />
                     </BorderPane.margin>

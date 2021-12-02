@@ -10,18 +10,17 @@ import java.io.IOException;
 public class MainMenuController {
 
         @FXML
-        public Button new_game;
+        public Button startGame;
         @FXML
         public Button quit;
 
     @FXML
-    public void newGame(ActionEvent actionEvent) throws IOException{
-        handleCloseButtonAction(actionEvent);
-        WitchDashMain.witchDashMainScene();
+    public void handleStartButtonAction(ActionEvent actionEvent) throws IOException{
+        MainTestClass.callDifficultyStage();
     }
 
         @FXML
-        public void quit() {
+        public void handleQuitButtonAction() {
             System.exit(0);
     }
 

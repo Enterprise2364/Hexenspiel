@@ -9,7 +9,6 @@ import javafx.scene.Group;
 import javafx.animation.*;
 import javafx.util.Duration;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 
@@ -18,13 +17,24 @@ public class MainTestClass extends Application {
     protected static Stage witchDashDifficultyStage;
     protected static Stage witchDashMainStage;
     protected static Stage gameOverStage;
+    protected static Stage mainMenuStage;
     //Duration per Frame in millisec
     private static final int durationPerFrameRate = 10;
 
 
     @Override
     public void start(Stage stage) throws IOException {
-        witchDashDifficultyStage = stage;
+        mainMenuStage = stage;
+        FXMLLoader fxmlLoader = new FXMLLoader(MainTestClass.class.getResource("MainMenu.fxml"));
+        Scene mainMenuScene = new Scene(fxmlLoader.load(), 400, 600);
+        mainMenuStage.setTitle("Main menu");
+        mainMenuStage.setScene(mainMenuScene);
+        mainMenuStage.show();
+    }
+
+    public static void callDifficultyStage() throws IOException {
+        mainMenuStage.close();
+        witchDashDifficultyStage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(MainTestClass.class.getResource("Difficulty.fxml"));
         Scene gameOverScene = new Scene(fxmlLoader.load(), 600, 400);
         witchDashDifficultyStage.setTitle("Difficulty Level");
@@ -33,7 +43,7 @@ public class MainTestClass extends Application {
 
     }
 
-    public static void witchDashMainScene(int obstacleNumber,int speed) {
+    public static void callWitchDashMain(int obstacleNumber, int speed) {
         witchDashDifficultyStage.close();
 
         if (witchDashMainStage==null){

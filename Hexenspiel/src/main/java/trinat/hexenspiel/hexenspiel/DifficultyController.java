@@ -3,7 +3,7 @@ package trinat.hexenspiel.hexenspiel;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 
-public class Difficulty {
+public class DifficultyController {
 
     public Button buttonEasy;
     public Button buttonMedium;
@@ -15,24 +15,24 @@ public class Difficulty {
     public int obstacleNumber;
 
     //Setting parameter for different niveaus
-    public void buttonEasyPressed(ActionEvent actionEvent) {
+    public void handleEasyButtonAction(ActionEvent actionEvent) {
         niveau = 1;
         speed = 1;
         obstacleNumber = 10;
-        MainTestClass.witchDashMainScene(obstacleNumber,speed);
+        MainTestClass.callWitchDashMain(obstacleNumber,speed);
     }
 
-    public void buttonMediumPressed(ActionEvent actionEvent) {
+    public void handleMediumButtonAction(ActionEvent actionEvent) {
         niveau = 2;
         speed = 2;
         obstacleNumber = 15;
-        MainTestClass.witchDashMainScene(obstacleNumber,speed);
+        MainTestClass.callWitchDashMain(obstacleNumber,speed);
     }
 
-    public void buttonHardPressed(ActionEvent actionEvent) {
+    public void handleHardButtonAction(ActionEvent actionEvent) {
         niveau = 3;
         speed = 3;
         obstacleNumber = 20;
-        MainTestClass.witchDashMainScene(obstacleNumber,speed);
+        MainTestClass.callWitchDashMain(obstacleNumber,speed);
     }
 }

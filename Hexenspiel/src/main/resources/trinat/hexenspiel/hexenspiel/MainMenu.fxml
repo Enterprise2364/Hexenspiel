@@ -10,14 +10,14 @@
     <bottom>
         <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <left>
-                <Button fx:id="new_game" mnemonicParsing="false" onAction="#newGame" text="New game" BorderPane.alignment="CENTER">
+                <Button fx:id="startGame" mnemonicParsing="false" onAction="#handleStartButtonAction" text="New game" BorderPane.alignment="CENTER">
                     <BorderPane.margin>
                         <Insets left="50.0" />
                     </BorderPane.margin>
                 </Button>
             </left>
             <right>
-                <Button fx:id="quit" mnemonicParsing="false" onAction="#quit" text="Quit" BorderPane.alignment="CENTER">
+                <Button fx:id="quit" mnemonicParsing="false" onAction="#handleQuitButtonAction" text="Quit" BorderPane.alignment="CENTER">
                     <BorderPane.margin>
                         <Insets right="50.0" />
                     </BorderPane.margin>
