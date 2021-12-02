@@ -34,7 +34,7 @@ public class WitchDashEngine {
         witch.setSpeed(witchSpeed);
         for(int i=0;i<obstacleNumber;i++){
             Pumpkin tempPumpkin= new Pumpkin(this.witchDashMainEngineStage.getScene().getWidth(),
-                    0,
+                    this.witchDashMainEngineStage.getScene().getY(),
                     this.witchDashMainEngineStage.getScene().getHeight());
             while (testIfSameYPosition(pumpkins,tempPumpkin)&&(pumpkins.size()<=10)){
 

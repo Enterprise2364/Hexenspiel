@@ -68,8 +68,6 @@ public class WitchDashMain extends Application {
                 sceneHeight);
         mainStage.setScene(witchDashScene);
         mainStage.show();
-
-
         WitchDashEngine witchDashEngine = new WitchDashEngine(mainStage, obstacleNumber);
         root.getChildren().add(witchDashEngine.getWitch().getRectangle());
 
