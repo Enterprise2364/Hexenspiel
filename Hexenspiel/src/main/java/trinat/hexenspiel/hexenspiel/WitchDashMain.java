@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.*;
 import javafx.scene.input.KeyCode;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -65,11 +66,13 @@ public class WitchDashMain extends Application {
 
         Scene witchDashScene = new Scene(root,
                 sceneWidth,
-                sceneHeight);
+                sceneHeight, Color.BLACK);
+
         mainStage.setScene(witchDashScene);
         mainStage.show();
         WitchDashEngine witchDashEngine = new WitchDashEngine(mainStage, obstacleNumber);
         root.getChildren().add(witchDashEngine.getWitch().getRectangle());
+        witchDashEngine.setPumpkinSpeed(speed);
 
         for (int i = 0; i < witchDashEngine.getPumpkins().size(); i++) {
             root.getChildren().add(witchDashEngine.getPumpkins().get(i).getRectangle());
@@ -152,7 +155,7 @@ public class WitchDashMain extends Application {
                             //Searches for Collisions and if detected then set the object to a random position
                             for (Pumpkin pumpkin1 : witchDashEngine.getPumpkins().stream().filter(pumpkin -> pumpkin.testCollision(witchDashEngine.getWitch().getRectangle())).collect(Collectors.toList())) {
                                 pumpkin1.getRectangle().setX(sceneWidth);
-                                pumpkin1.setToRandomYPosition(sceneWidth, sceneY,sceneHeight);
+                                pumpkin1.setToRandomYPosition(sceneWidth, 0.0,sceneHeight);
 
                             }
                         }

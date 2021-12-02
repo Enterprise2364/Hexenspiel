@@ -3,15 +3,15 @@ package trinat.hexenspiel.hexenspiel;
 public class Life {
 
     // life parameter
-    public double hitPoints;
-    public double initialLives;
-    public double inttemporaryLife;
+    private double hitPoints;
+    private double initialLives;
+
 
     //life Default Constructor
     public Life(){
         initialLives =6;
         hitPoints =0;
-        inttemporaryLife = initialLives - hitPoints;
+
     }
 
     // life Parameter Constructor

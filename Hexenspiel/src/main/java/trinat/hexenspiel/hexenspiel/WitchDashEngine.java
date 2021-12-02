@@ -134,6 +134,8 @@ public class WitchDashEngine {
     }
 
     public void setPumpkinSpeed(int pumpkinSpeed) {
-        this.pumpkinSpeed = pumpkinSpeed;
+        for (int i=0; i<pumpkins.size();i++){
+
+        }
     }
 }
