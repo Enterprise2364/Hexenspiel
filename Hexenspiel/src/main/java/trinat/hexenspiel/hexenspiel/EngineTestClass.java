@@ -52,21 +52,17 @@ public class EngineTestClass extends Application {
         int sceneY = 0;
         int sceneWidth = 800;
         int sceneHeight = 400;
-        int scenePositionY =0;
         Group root = new Group();
         Scene witchDashScene = new Scene(root, sceneWidth, sceneHeight);
         witchDashStage.setScene(witchDashScene);
         witchDashStage.show();
-        witchDashStage.setWidth(sceneWidth);
-        witchDashStage.setHeight(sceneHeight);
-        witchDashStage.setY(sceneY);
-        WitchDashEngine testEngine = new WitchDashEngine(witchDashStage, 4);
+        WitchDashEngine testEngine = new WitchDashEngine(witchDashStage, 9);
         root.getChildren().add(testEngine.getWitch().getRectangle());
         Pumpkin pumpkin =new Pumpkin(sceneWidth,sceneY,sceneHeight);
         root.getChildren().add(pumpkin.getRectangle());
         for (int i=0;i<testEngine.getPumpkins().size();i++){
             root.getChildren().add(testEngine.getPumpkins().get(i).getRectangle());
-            testEngine.getPumpkins().get(i).setSpeed(1);
+            testEngine.getPumpkins().get(i).setSpeed(2);
             testEngine.getPumpkins().get(i).getRectangle().setFill(Color.BLUE);
             testEngine.getPumpkins().get(i).getRectangle().setVisible(true);
         }
@@ -81,10 +77,10 @@ public class EngineTestClass extends Application {
         pumpkin.getRectangle().setY(testEngine.getPumpkins().get(0).getRectangle().getY());
         test = testEngine.testIfSameYPosition(testEngine.getPumpkins(),pumpkin);
 
-        loop = new Timeline(new KeyFrame(Duration.millis(20), arg -> {
+        loop = new Timeline(new KeyFrame(Duration.millis(10), arg -> {
 
             // Pumpkin Movement
-            testEngine.movePumpkins(20);
+            testEngine.movePumpkins(100);
 
 
             //Test collision
