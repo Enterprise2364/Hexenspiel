@@ -174,7 +174,7 @@ public class WitchDashMain extends Application {
     public static void gameOverStage() throws IOException {
         gameOverStage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(MainTestClass.class.getResource("gameOverView.fxml"));
-        Scene gameOverScene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene gameOverScene = new Scene(fxmlLoader.load(), 400, 400);
         gameOverStage.setTitle("Game over");
         gameOverStage.setScene(gameOverScene);
         gameOverStage.show();

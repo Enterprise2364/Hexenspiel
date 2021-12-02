@@ -14,6 +14,9 @@
                     <BorderPane.margin>
                         <Insets left="50.0" />
                     </BorderPane.margin>
+                    <font>
+                        <Font size="37.0" />
+                    </font>
                 </Button>
             </left>
             <right>
@@ -21,6 +24,9 @@
                     <BorderPane.margin>
                         <Insets right="50.0" />
                     </BorderPane.margin>
+                    <font>
+                        <Font size="37.0" />
+                    </font>
                 </Button>
             </right>
         </BorderPane>
