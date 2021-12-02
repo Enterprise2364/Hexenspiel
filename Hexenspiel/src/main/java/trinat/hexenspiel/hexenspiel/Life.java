@@ -3,42 +3,63 @@ package trinat.hexenspiel.hexenspiel;
 public class Life {
 
     // life parameter
-    public double inthit_point;
-    public double intlife;
-    public double inttemporary_life;
+    public double hitPoints;
+    public double initialLives;
+    public double inttemporaryLife;
 
-    //life declaration
+    //life Default Constructor
     public Life(){
-        intlife =6;
-        inthit_point=0;
-        inttemporary_life=intlife-inthit_point;
+        initialLives =6;
+        hitPoints =0;
+        inttemporaryLife = initialLives - hitPoints;
     }
 
-    // life modification
-    public Life(double life,double hit_point){
-        intlife=life;
-        inthit_point=hit_point;
+    // life Parameter Constructor
+    public Life(double initialLives, double hitPoints){
+        this.initialLives = initialLives;
+        this.hitPoints = hitPoints;
     }
 
-    //Hit_point modification
-    public double setHit_point(double hit_point){
-        inthit_point=hit_point;
-        return inthit_point;
-    }
-    //life modification
-    public double setLife(double life){
-        intlife=life;
-        return intlife;
+    //ActualLife modification
+    public double getHitPoints() {
+        return hitPoints;
     }
 
-    //get Hit_point
-    public double getHit_point() {return this.inthit_point;}
+    public void setHitPoints(double hitPoints) {
+        this.hitPoints = hitPoints;
+    }
 
-    //get Life
-    public double getLife() {return this.intlife;}
+
+    public double getInitialLives() {
+        return initialLives;
+    }
+
+    //InitialLives modification
+    public void setInitialLives(double initialLives) {
+        this.initialLives = initialLives;
+    }
 
     //get temporary life
-    public double getTemporary_life() {return this.inttemporary_life;}
+    public double getCurrentLives() {
+        return this.initialLives - this.hitPoints;
+    }
+
+    public boolean testNoLivesLeft(){
+        if(getCurrentLives()==0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public void addHitPoint(){
+        this.hitPoints++;
+    }
+
+    public void deleteHitPoint(){
+        this.hitPoints--;
+    }
 
 
 }

@@ -12,24 +12,27 @@ public class Difficulty {
     public int speed;
     public int niveau;
     //Multiple Obstacle
-    public int spawnFrequency;
+    public int obstacleNumber;
 
     //Setting parameter for different niveaus
     public void buttonEasyPressed(ActionEvent actionEvent) {
         niveau = 1;
         speed = 1;
-        spawnFrequency = 3;
+        obstacleNumber = 10;
+        MainTestClass.witchDashMainScene(obstacleNumber,speed);
     }
 
     public void buttonMediumPressed(ActionEvent actionEvent) {
         niveau = 2;
         speed = 2;
-        spawnFrequency = 5;
+        obstacleNumber = 15;
+        MainTestClass.witchDashMainScene(obstacleNumber,speed);
     }
 
     public void buttonHardPressed(ActionEvent actionEvent) {
         niveau = 3;
         speed = 3;
-        spawnFrequency = 7;
+        obstacleNumber = 20;
+        MainTestClass.witchDashMainScene(obstacleNumber,speed);
     }
 }
