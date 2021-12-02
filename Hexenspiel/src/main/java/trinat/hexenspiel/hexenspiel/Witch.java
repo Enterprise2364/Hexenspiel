@@ -7,6 +7,7 @@ import javafx.scene.shape.*;
 public class Witch extends GameFigures {
     private Rectangle rectangle = super.getRectangle();
     private int speed = 8;
+    private Life life=new Life();
 
 
     public Witch() {
@@ -31,8 +32,13 @@ public class Witch extends GameFigures {
         this.rectangle.setFill(Color.BLUE);
     }
 
+    public Life getLife() {
+        return life;
+    }
 
-
+    public void setLife(Life life) {
+        this.life = life;
+    }
 
     /*public static Image Witch_image (Stage primaryStage){
         //calling an image
