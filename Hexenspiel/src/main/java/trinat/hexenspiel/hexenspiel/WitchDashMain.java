@@ -68,8 +68,8 @@ public class WitchDashMain extends Application {
                 sceneHeight);
         mainStage.setScene(witchDashScene);
         mainStage.show();
-        mainStage.setWidth(witchDashScene.getWidth());
-        mainStage.setHeight(witchDashScene.getHeight());
+
+
         WitchDashEngine witchDashEngine = new WitchDashEngine(mainStage, obstacleNumber);
         root.getChildren().add(witchDashEngine.getWitch().getRectangle());
 
@@ -97,7 +97,7 @@ public class WitchDashMain extends Application {
 
                         if (e.getCode().equals(KeyCode.W) || e.getCode().equals(KeyCode.Z)) {
 
-                            if (witchDashEngine.getWitch().getRectangle().getY() <= witchDashScene.getY()) {
+                            if (witchDashEngine.getWitch().getRectangle().getY() <= 0) {
 
                                 witchDashEngine.getWitch().moveUp();
                             } else {
@@ -127,7 +127,7 @@ public class WitchDashMain extends Application {
 
                         } else if (e.getCode().equals(KeyCode.Q) || e.getCode().equals(KeyCode.A)) {
 
-                            if (witchDashEngine.getWitch().getRectangle().getX() <= witchDashScene.getX()) {
+                            if (witchDashEngine.getWitch().getRectangle().getX() <= 0) {
 
                                 witchDashEngine.getWitch().moveRight();
                             } else {

@@ -16,10 +16,11 @@ public class WitchDashEngine {
             Pumpkin tempPumpkin= new Pumpkin(sceneWidth,
                     scenePositionY,
                     sceneHeight);
-            while (testIfSameYPosition(pumpkins,tempPumpkin)&&(pumpkins.size()<=5)){
+
+            while (testIfSameYPosition(pumpkins,tempPumpkin)&&(pumpkins.size()<=10)){
 
                 tempPumpkin.setToRandomYPosition(sceneWidth,
-                        scenePositionY,
+                        0,
                         sceneHeight);
 
             }
@@ -33,12 +34,12 @@ public class WitchDashEngine {
         witch.setSpeed(witchSpeed);
         for(int i=0;i<obstacleNumber;i++){
             Pumpkin tempPumpkin= new Pumpkin(this.witchDashMainEngineStage.getScene().getWidth(),
-                    this.witchDashMainEngineStage.getScene().getY()-this.witchDashMainEngineStage.getScene().getY(),
+                    0,
                     this.witchDashMainEngineStage.getScene().getHeight());
             while (testIfSameYPosition(pumpkins,tempPumpkin)&&(pumpkins.size()<=10)){
 
                 tempPumpkin.setToRandomYPosition(this.witchDashMainEngineStage.getScene().getWidth(),
-                        this.witchDashMainEngineStage.getScene().getY()-this.witchDashMainEngineStage.getScene().getY(),
+                        0,
                         this.witchDashMainEngineStage.getScene().getHeight());
 
             }
@@ -57,9 +58,7 @@ public class WitchDashEngine {
                 pumpkins.get(i).moveLeft();
             }
         }
-
-reappearance(100);
-       /* pumpkins.forEach(Pumpkin::moveLeft);*/
+        reappearance(interval);
     }
 
     public void reappearance(int interval) {

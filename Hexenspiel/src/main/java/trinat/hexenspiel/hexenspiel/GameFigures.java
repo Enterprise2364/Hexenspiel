@@ -64,8 +64,8 @@ public abstract class GameFigures {
     public void setToRandomYPosition(double sceneWidth,
                                      double scenePositionY,
                                      double sceneHeight){
-        this.rectangle.setY(RandomNumberGenerator.random(scenePositionY,
-                scenePositionY + sceneHeight - this.rectangle.getHeight()));
+        this.rectangle.setY(RandomNumberGenerator.random(0,
+                sceneHeight - this.rectangle.getHeight()));
     }
 }
 
