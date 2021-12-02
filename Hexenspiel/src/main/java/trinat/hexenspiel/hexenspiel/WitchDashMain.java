@@ -45,7 +45,7 @@ public class WitchDashMain extends Application {
                 sceneHeight);
         witchDashMainStage.setScene(witchDashScene);
         witchDashMainStage.show();
-        WitchDashEngine witchDashEngine = new WitchDashEngine(witchDashMainStage, 4);
+        WitchDashEngine witchDashEngine = new WitchDashEngine(witchDashMainStage, 10);
         root.getChildren().add(witchDashEngine.getWitch().getRectangle());
 
         for (int i=0;i<witchDashEngine.getPumpkins().size();i++){
@@ -60,6 +60,8 @@ public class WitchDashMain extends Application {
                 arg -> {
                     // Pumpkin Movement
                     witchDashEngine.movePumpkins(20);
+
+
 
                     //Witch Control
                     witchDashScene.setOnKeyPressed(e -> {
