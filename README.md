@@ -127,7 +127,7 @@ With this part of our code, it seems possible to move two objects at the same ti
 
 ### 2.) Collision Test
 
-![image](https://user-images.githubusercontent.com/93000090/144396278-0c28aaba-0b61-4e0a-882d-948f06af4066.png)
+![image](https://user-images.githubusercontent.com/93608342/144523536-998bd1f4-c500-42a9-8f12-930a0ebf7302.png)
 
 
 
