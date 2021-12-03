@@ -166,3 +166,4 @@ After the basic framework of the programme is in place, the witch character shou
 
 # Conclusion
 
+A functioning Witch Dash game was realised which allows the user to play the game, with multiple pumpkin obstacles approaching the witch character, which itself can be moved to avoid the obstacles. The core element for this is the timeline. In sprint 2, a game engine was added along with difficulty levels, a main menu and game over screen. The group focused on achieving a functional game, meaning that further amending the code to permit a better overview, was left for a future sprint.
