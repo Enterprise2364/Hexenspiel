@@ -127,7 +127,8 @@ With this part of our code, it seems possible to move two objects at the same ti
 
 ### 2.) Collision Test
 
-![image](https://user-images.githubusercontent.com/93608342/144523536-998bd1f4-c500-42a9-8f12-930a0ebf7302.png)
+![image](https://user-images.githubusercontent.com/93000090/144563976-1381c0d6-a57f-4b8e-87a3-2e26ee322589.png)
+
 
 
 
@@ -148,6 +149,7 @@ To detect a collision between the Witch and the Pumpkin, this code snippet compa
 
 ### 1.) Multiple life
 
+![image](https://user-images.githubusercontent.com/93608342/144523536-998bd1f4-c500-42a9-8f12-930a0ebf7302.png)
 ![image](https://user-images.githubusercontent.com/93000090/144405411-3234a1e8-f045-4bd9-ab4b-ed73a7e66f1d.png)
 
 
@@ -156,7 +158,8 @@ After the basic framework of the programme is in place, the witch character shou
 
 ## Class diagramm
 
-![image](https://user-images.githubusercontent.com/93000090/144392812-973ebb6f-01e3-44bc-a21b-ffec6fc4eceb.png)
+![image](https://user-images.githubusercontent.com/93000090/144564069-e98a0c71-6cda-4676-b0d3-147bcca8d430.png)
+
 
 
 ---
