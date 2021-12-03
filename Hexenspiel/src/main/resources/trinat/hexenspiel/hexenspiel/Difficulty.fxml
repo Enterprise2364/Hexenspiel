@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trinat.hexenspiel.hexenspiel.DifficultyController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trinat.hexenspiel.hexenspiel.DifficultyController">
    <children>
       <BorderPane layoutX="24.0" prefHeight="400.0" prefWidth="546.0">
          <left>

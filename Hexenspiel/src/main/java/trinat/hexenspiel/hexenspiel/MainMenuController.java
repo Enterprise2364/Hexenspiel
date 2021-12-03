@@ -21,7 +21,7 @@ public class MainMenuController {
 
         @FXML
         public void handleQuitButtonAction() {
-            System.exit(0);
+            WitchDashMain.mainMenuStage.close();
     }
 
 }

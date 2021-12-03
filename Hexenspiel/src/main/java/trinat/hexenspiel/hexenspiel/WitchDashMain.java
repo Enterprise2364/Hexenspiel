@@ -26,7 +26,7 @@ public class WitchDashMain extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         mainMenuStage = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(MainTestClass.class.getResource("MainMenu.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(WitchDashMain.class.getResource("MainMenu.fxml"));
         Scene mainMenuScene = new Scene(fxmlLoader.load(), 600, 400);
         mainMenuStage.setTitle("Main menu");
         mainMenuStage.setScene(mainMenuScene);
@@ -36,7 +36,7 @@ public class WitchDashMain extends Application {
     public static void callDifficultyStage() throws IOException {
         mainMenuStage.close();
         difficultyStage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(MainTestClass.class.getResource("Difficulty.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(WitchDashMain.class.getResource("Difficulty.fxml"));
         Scene gameOverScene = new Scene(fxmlLoader.load(), 600, 400);
         difficultyStage.setTitle("Difficulty Level");
         difficultyStage.setScene(gameOverScene);
@@ -47,7 +47,7 @@ public class WitchDashMain extends Application {
     public static void callWitchDashMain(int obstacleNumber, int speed) {
         difficultyStage.close();
 
-        if (mainStage ==null){
+        if (mainStage == null) {
             mainStage = new Stage();
         }
 
@@ -58,10 +58,15 @@ public class WitchDashMain extends Application {
 
         //Set Scene
         int sceneY = 0;
+
         int sceneWidth = 800;
+
         int sceneHeight = 400;
+
         int witchSpeed = 10;
+
         int pumpkinSpeed = 1;
+
         Group root = new Group();
 
         Scene witchDashScene = new Scene(root,
@@ -69,14 +74,20 @@ public class WitchDashMain extends Application {
                 sceneHeight, Color.BLACK);
 
         mainStage.setScene(witchDashScene);
+
         mainStage.show();
         WitchDashEngine witchDashEngine = new WitchDashEngine(mainStage, obstacleNumber);
+
         root.getChildren().add(witchDashEngine.getWitch().getRectangle());
+
         witchDashEngine.setPumpkinSpeed(speed);
 
         for (int i = 0; i < witchDashEngine.getPumpkins().size(); i++) {
+
             root.getChildren().add(witchDashEngine.getPumpkins().get(i).getRectangle());
+
             witchDashEngine.getPumpkins().get(i).setSpeed(speed);
+
             witchDashEngine.getPumpkins().get(i).getRectangle().setVisible(true);
         }
 
@@ -141,21 +152,37 @@ public class WitchDashMain extends Application {
 
                     // Collision between Witch and Pumpkin
                     if (witchDashEngine.testCollision()) {
-                        if(witchDashEngine.getWitch().getLife().testNoLivesLeft()) {
+
+                        if (witchDashEngine.getWitch().getLife().testNoLivesLeft()) {
+
                             loop.stop();
+
                             try {
+
                                 gameOverStage();
+
                             } catch (IOException e) {
+
                                 e.printStackTrace();
+
                             }
-                        }
-                        else{
+
+                        } else {
+
                             witchDashEngine.getWitch().getLife().addHitPoint();
 
                             //Searches for Collisions and if detected then set the object to a random position
-                            for (Pumpkin pumpkin1 : witchDashEngine.getPumpkins().stream().filter(pumpkin -> pumpkin.testCollision(witchDashEngine.getWitch().getRectangle())).collect(Collectors.toList())) {
+                            for (Pumpkin pumpkin1 : witchDashEngine.
+                                                    getPumpkins().stream().
+                                                    filter(
+                                                    pumpkin -> pumpkin.testCollision(witchDashEngine.
+                                                            getWitch().
+                                                            getRectangle())).
+                                                            toList()) {
+
                                 pumpkin1.getRectangle().setX(sceneWidth);
-                                pumpkin1.setToRandomYPosition(sceneWidth, 0.0,sceneHeight);
+
+                                pumpkin1.setToRandomYPosition(sceneWidth, 0.0, sceneHeight);
 
                             }
                         }
@@ -164,7 +191,9 @@ public class WitchDashMain extends Application {
 
                 }));
         loop.setCycleCount(Timeline.INDEFINITE);
+
         loop.play();
+
         mainStage.show();
 
     }
@@ -176,10 +205,17 @@ public class WitchDashMain extends Application {
 
     public static void gameOverStage() throws IOException {
         gameOverStage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(MainTestClass.class.getResource("gameOverView.fxml"));
+
+        FXMLLoader fxmlLoader = new FXMLLoader(WitchDashMain.
+                                                class.
+                                                getResource("gameOverView.fxml"));
+
         Scene gameOverScene = new Scene(fxmlLoader.load(), 400, 400);
+
         gameOverStage.setTitle("Game over");
+
         gameOverStage.setScene(gameOverScene);
+
         gameOverStage.show();
     }
 }
