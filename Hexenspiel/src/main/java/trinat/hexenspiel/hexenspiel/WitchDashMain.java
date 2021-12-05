@@ -11,7 +11,6 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
-import java.util.stream.Collectors;
 
 public class WitchDashMain extends Application {
     private static Timeline loop;
@@ -76,6 +75,7 @@ public class WitchDashMain extends Application {
         mainStage.setScene(witchDashScene);
 
         mainStage.show();
+
         WitchDashEngine witchDashEngine = new WitchDashEngine(mainStage, obstacleNumber);
 
         root.getChildren().add(witchDashEngine.getWitch().getRectangle());
@@ -151,7 +151,7 @@ public class WitchDashMain extends Application {
                     });
 
                     // Collision between Witch and Pumpkin
-                    if (witchDashEngine.testCollision()) {
+                    if (witchDashEngine.testCollisionWitchPumpkins()) {
 
                         if (witchDashEngine.getWitch().getLife().testNoLivesLeft()) {
 

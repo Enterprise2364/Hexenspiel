@@ -1,5 +1,4 @@
 package trinat.hexenspiel.hexenspiel;
-import javafx.scene.Group;
 import javafx.stage.Stage;
 import java.util.ArrayList;
 
@@ -17,7 +16,7 @@ public class WitchDashEngine {
                     scenePositionY,
                     sceneHeight);
 
-            while (testIfSameYPosition(pumpkins,tempPumpkin)&&(pumpkins.size()<=10)){
+            while (testCollisionWithPumpkins(tempPumpkin,pumpkins)&&(pumpkins.size()<=10)){
 
                 tempPumpkin.setToRandomYPosition(sceneWidth,
                         0,
@@ -36,7 +35,7 @@ public class WitchDashEngine {
             Pumpkin tempPumpkin= new Pumpkin(this.witchDashMainEngineStage.getScene().getWidth(),
                     this.witchDashMainEngineStage.getScene().getY(),
                     this.witchDashMainEngineStage.getScene().getHeight());
-            while (testIfSameYPosition(pumpkins,tempPumpkin)&&(pumpkins.size()<=10)){
+            while (testCollisionWithPumpkins(tempPumpkin,pumpkins)&&(pumpkins.size()<=10)){
 
                 tempPumpkin.setToRandomYPosition(this.witchDashMainEngineStage.getScene().getWidth(),
                         0,
@@ -76,25 +75,25 @@ public class WitchDashEngine {
 
     }
 
-    public boolean testIfSameYPosition(ArrayList<Pumpkin> pumpkinsPositionTest,Pumpkin pumpkinPositionTest){
-        if(pumpkinsPositionTest.stream().anyMatch(pumpkin -> pumpkin.getRectangle().getY()>=pumpkinPositionTest.getRectangle().getY()) && (pumpkinsPositionTest.stream().anyMatch(pumpkin -> pumpkin.getRectangle().getY()<(pumpkinPositionTest.getRectangle().getY()+pumpkinPositionTest.getRectangle().getHeight())))) {
-            return true;
-        }
-        else{
-                return false;
-            }
-    }
 
-
-
-
-    public boolean testCollision(){
+    public boolean testCollisionWitchPumpkins(){
         for(int i=0;i<this.pumpkins.size();i++){
             if (this.witch.testCollision(this.pumpkins.get(i).getRectangle())) {
                 return true;
             }
         }
         return false;
+    }
+
+    public boolean testCollisionWithPumpkins(GameFigures figure, ArrayList <Pumpkin> list){
+        if(list.stream().anyMatch(
+                pumpkin ->
+                        pumpkin.testCollision(figure.getRectangle()))) {
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     public Stage getWitchDashMainEngineStage() {

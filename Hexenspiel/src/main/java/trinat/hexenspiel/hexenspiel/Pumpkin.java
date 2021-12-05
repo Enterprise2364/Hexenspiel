@@ -24,7 +24,7 @@ public class Pumpkin extends GameFigures {
     public Pumpkin(double sceneWidth, double scenePositionY, double sceneHeight,double positionX, double positionY, double Width, double Height, double ArcWidth, double ArcHeight) {
         super();
         this.rectangle.setX(positionX);
-        this.rectangle.setY(RandomNumberGenerator.random(scenePositionY, scenePositionY + sceneHeight - this.rectangle.getHeight()));
+        this.rectangle.setY(positionY);
         this.rectangle.setWidth(Width);
         this.rectangle.setHeight(Height);
         this.rectangle.setArcWidth(ArcWidth);
