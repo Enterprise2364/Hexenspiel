@@ -14,12 +14,13 @@ public class WitchDashEngine {
         witch.setSpeed(witchSpeed);
         for (int i = 0; i < obstacleNumber; i++) {
             Pumpkin tempPumpkin= new Pumpkin(sceneWidth,
-                                scenePositionY,
-                                sceneHeight);
-            while (testIfSameYPosition(pumpkins,tempPumpkin)&&(pumpkins.size()<=5)){
+                    scenePositionY,
+                    sceneHeight);
+
+            while (testIfSameYPosition(pumpkins,tempPumpkin)&&(pumpkins.size()<=10)){
 
                 tempPumpkin.setToRandomYPosition(sceneWidth,
-                        scenePositionY,
+                        0,
                         sceneHeight);
 
             }
@@ -33,13 +34,13 @@ public class WitchDashEngine {
         witch.setSpeed(witchSpeed);
         for(int i=0;i<obstacleNumber;i++){
             Pumpkin tempPumpkin= new Pumpkin(this.witchDashMainEngineStage.getScene().getWidth(),
-                    this.witchDashMainEngineStage.getScene().getY()-this.witchDashMainEngineStage.getScene().getY(),
+                    this.witchDashMainEngineStage.getScene().getY(),
                     this.witchDashMainEngineStage.getScene().getHeight());
             while (testIfSameYPosition(pumpkins,tempPumpkin)&&(pumpkins.size()<=10)){
 
                 tempPumpkin.setToRandomYPosition(this.witchDashMainEngineStage.getScene().getWidth(),
-                                                this.witchDashMainEngineStage.getScene().getY()-this.witchDashMainEngineStage.getScene().getY(),
-                                                this.witchDashMainEngineStage.getScene().getHeight());
+                        0,
+                        this.witchDashMainEngineStage.getScene().getHeight());
 
             }
             pumpkins.add(tempPumpkin);
@@ -47,24 +48,24 @@ public class WitchDashEngine {
         }
     }
 
-    public void movePumpkins(int interval){
+    public void movePumpkins(int interval) {
         pumpkins.get(0).moveLeft();
-        for(int i=1;i<pumpkins.size();i++){
-            if (pumpkins.get((i-1)).getRectangle().getX() <= (this.witchDashMainEngineStage.getWidth()-pumpkins.get(i-1).getRectangle().getWidth())- interval){
+        for (int i = 1; i < pumpkins.size(); i++) {
+
+            if ((pumpkins.get(i - 1).getRectangle().getX() < (this.witchDashMainEngineStage.getWidth() - pumpkins.get(i - 1).getRectangle().getWidth() - interval))) {
+                pumpkins.get(i).moveLeft();
+            } else if ((pumpkins.get(i - 1).getRectangle().getX() != pumpkins.get(i).getRectangle().getX()) && (pumpkins.get(i - 1).getRectangle().getX() > pumpkins.get(i).getRectangle().getX())) {
                 pumpkins.get(i).moveLeft();
             }
         }
-reappearance();
-       /* pumpkins.forEach(Pumpkin::moveLeft);*/
+        reappearance(interval);
     }
 
-    public void reappearance() {
+    public void reappearance(int interval) {
         for (int i = 0; i < pumpkins.size(); i++) {
-            if (pumpkins.get(i).getRectangle().getX() < (this.witchDashMainEngineStage.getMinWidth() - 100 )){
+            if (pumpkins.get(i).getRectangle().getX() < (this.witchDashMainEngineStage.getMinWidth() - (pumpkins.get(i).getRectangle().getWidth()+ interval))){
                 pumpkins.get(i).getRectangle().setX(witchDashMainEngineStage.getWidth());
-                pumpkins.get(i).setToRandomYPosition(this.witchDashMainEngineStage.getScene().getWidth(),
-                        this.witchDashMainEngineStage.getScene().getY()-this.witchDashMainEngineStage.getScene().getY(),
-                        this.witchDashMainEngineStage.getScene().getHeight());
+                pumpkins.get(i).getRectangle().setY(RandomNumberGenerator.random(witchDashMainEngineStage.getY(), witchDashMainEngineStage.getY() + witchDashMainEngineStage.getHeight()- this.pumpkins.get(i).getRectangle().getHeight()));
             }
 
         }
