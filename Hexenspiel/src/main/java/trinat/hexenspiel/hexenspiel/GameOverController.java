@@ -17,19 +17,20 @@ public class GameOverController {
         @FXML
         public Button retry;
         @FXML
-        public Button abandonned;
+        public Button quit;
         @FXML
         private Label welcomeText;
 
         @FXML
-        public void handleCloseButtonAction(ActionEvent event) {
+        public void handleQuitButtonAction(ActionEvent event) {
             WitchDashMain.gameOverStage.close();
-            WitchDashMain.witchDashMainStage.close();
+            WitchDashMain.mainStage.close();
         }
 
         @FXML
-        public void restart(ActionEvent actionEvent) throws IOException {
-            handleCloseButtonAction(actionEvent);
-            WitchDashMain.witchDashMainScene();
+        public void handleRestartButtonAction(ActionEvent actionEvent) throws IOException {
+            handleQuitButtonAction(actionEvent);
+            WitchDashMain.mainStage.close();
+            WitchDashMain.callDifficultyStage();
         }
 }

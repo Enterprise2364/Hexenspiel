@@ -6,11 +6,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trinat.hexenspiel.hexenspiel.GameOverController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trinat.hexenspiel.hexenspiel.MainMenuController">
     <bottom>
         <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <left>
-                <Button fx:id="Retry" mnemonicParsing="false" onAction="#handleQuitButtonAction" text="Quit" BorderPane.alignment="CENTER">
+                <Button fx:id="startGame" mnemonicParsing="false" onAction="#handleStartButtonAction" text="New game" BorderPane.alignment="CENTER">
                     <BorderPane.margin>
                         <Insets left="50.0" />
                     </BorderPane.margin>
@@ -20,7 +20,7 @@
                 </Button>
             </left>
             <right>
-                <Button fx:id="Quit" mnemonicParsing="false" onAction="#handleRestartButtonAction" text="Retry" BorderPane.alignment="CENTER">
+                <Button fx:id="quit" mnemonicParsing="false" onAction="#handleQuitButtonAction" text="Quit" BorderPane.alignment="CENTER">
                     <BorderPane.margin>
                         <Insets right="50.0" />
                     </BorderPane.margin>
@@ -32,9 +32,9 @@
         </BorderPane>
     </bottom>
     <center>
-        <Text fx:id="game_over_text" fill="#fb0303" strokeType="OUTSIDE" strokeWidth="0.0" text="GAME OVER" textAlignment="CENTER" wrappingWidth="272.52013397216797" BorderPane.alignment="CENTER">
+        <Text fx:id="main_menu_text" fill="#0208fa" strokeType="OUTSIDE" strokeWidth="0.0" text="Main menu" textAlignment="CENTER" wrappingWidth="340.52013397216797" BorderPane.alignment="CENTER">
             <font>
-                <Font size="48.0" />
+                <Font name="Baskerville" size="60.0" />
             </font>
         </Text>
     </center>

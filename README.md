@@ -9,6 +9,7 @@
 
 # Table of contents
 
+
 1. [Introduction](#introduction)
 2. [Aims](#aims)
 3. [Context](#context)
@@ -19,7 +20,6 @@
 8. [Documentation Sprint 1](#documentation-sprint-1)
 9. [Documentation Sprint 2](#documentation-sprint-2)
 10. [Conclusion](#conclusion)
-
 
 ---
 # Introduction
@@ -55,10 +55,12 @@ Once the game has started, you can move your witch character up and down using t
 
 ---
 
+
 # User Stories
 
 | US | Description | Acceptance criteria | Priority | Story Points |
 |----|----|----|----|----|
+
 | 1 | As a user I control the movements of the witch character with the keyboard. | The program should recognise keyboard inputs and move the character accordingly. | high | 15 |
 | 2 | As a user, I expect that the obstacles fly towards the witch character at alternating heights. | With the help of a random function, the objects appear at different heights. | high | 10 |
 | 3 | As a user, I want there to be a main menu in which to choose settings and start the game. | A main menu with start and exit button shall be available to the player. | medium | 10 |
@@ -71,6 +73,7 @@ Once the game has started, you can move your witch character up and down using t
 | 10 | As a programmer, I want to be able to easily understand the programme so that I can rebuild it, maintain it and add new features. | Comments, logical structure. | high | 5 |
 
 ---
+
 
 # Releaseplan
 
@@ -161,9 +164,9 @@ After the basic framework of the programme is in place, the witch character shou
 ![image](https://user-images.githubusercontent.com/93000090/144564069-e98a0c71-6cda-4676-b0d3-147bcca8d430.png)
 
 
-
 ---
 
 # Conclusion
 
 A functioning Witch Dash game was realised which allows the user to play the game, with multiple pumpkin obstacles approaching the witch character, which itself can be moved to avoid the obstacles. The core element for this is the timeline. In sprint 2, a game engine was added along with difficulty levels, a main menu and game over screen. The group focused on achieving a functional game, meaning that further amending the code to permit a better overview, was left for a future sprint.
+
